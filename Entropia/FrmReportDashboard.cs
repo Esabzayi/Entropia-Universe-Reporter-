@@ -9,29 +9,53 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Runtime.CompilerServices;
+using System.Data;
 
 namespace Entropia
 {
     public partial class FrmReportDashboard : DevExpress.XtraEditors.XtraForm
     {
+        DataTable CostOfAttack = new DataTable();
         private string inputFilePath;
         private string outputFile;
 
         private readonly Regex shrapnelRegex = new Regex(@"\[System\] \[] You received Shrapnel", RegexOptions.Compiled);
         private readonly Regex Criticaldamage_inflicted = new Regex(@"\[System\] \[] Critical hit - Additional damage! You inflicted", RegexOptions.Compiled);
         private readonly Regex Simpledamage_inflicted = new Regex(@"\[System\] \[] You inflicted", RegexOptions.Compiled);
-       private readonly Regex AmplifierRegex = new Regex(@"\[System\] \[] You received Output Amplifier", RegexOptions.Compiled);
+        private readonly Regex TargetEvadedYourAttack_Regex = new Regex(@"\[System\] \[] The target Evaded your attack", RegexOptions.Compiled);
+        private readonly Regex TargetDodgedYourAttack_Regex = new Regex(@"\[System\] \[] The target Dodged your attack", RegexOptions.Compiled);
+        private readonly Regex AmplifierRegex = new Regex(@"\[System\] \[] You received Output Amplifier", RegexOptions.Compiled);
         private readonly Regex pedRegex = new Regex(@"Value:\s+(\d+\.\d+)\s+PED", RegexOptions.Compiled);
-        //private readonly Regex DamageRegex = new Regex(@"inflicted:\s+(\d+\.\d+)\s+points of damage", RegexOptions.Compiled);
         private readonly Regex DamageRegex = new Regex(@"(\d+\.\d+)\s+points", RegexOptions.Compiled);
-
         private readonly Regex lineRegex = new Regex(@"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) \[System\] \[\] You received Shrapnel x \(\d+\) Value: \d+\.\d+ PED", RegexOptions.Compiled);
+
+        #region Enhancer Regex
+        //Your enhancer Weapon Damage Enhancer 1
+        private readonly Regex Enhancer01_Regex = new Regex(@"\[System\] \[] Your enhancer Weapon Damage Enhancer 1", RegexOptions.Compiled);
+        private readonly Regex Enhancer02_Regex = new Regex(@"\[System\] \[] Your enhancer Weapon Damage Enhancer 2", RegexOptions.Compiled);
+        private readonly Regex Enhancer03_Regex = new Regex(@"\[System\] \[] Your enhancer Weapon Damage Enhancer 3", RegexOptions.Compiled);
+        private readonly Regex Enhancer04_Regex = new Regex(@"\[System\] \[] Your enhancer Weapon Damage Enhancer 4", RegexOptions.Compiled);
+        private readonly Regex Enhancer05_Regex = new Regex(@"\[System\] \[] Your enhancer Weapon Damage Enhancer 5", RegexOptions.Compiled);
+        private readonly Regex Enhancer06_Regex = new Regex(@"\[System\] \[] Your enhancer Weapon Damage Enhancer 6", RegexOptions.Compiled);
+
+
+        private List<string> Enhancer01_List = new List<string>();
+        private List<string> Enhancer02_List = new List<string>();
+        private List<string> Enhancer03_List = new List<string>();
+        private List<string> Enhancer04_List = new List<string>();
+        private List<string> Enhancer05_List = new List<string>();
+        private List<string> Enhancer06_List = new List<string>();
+
+        #endregion
 
         private long lastReadPosition = 0;
         private List<double> pedValues = new List<double>();
+
         private List<double> AmplifierValues = new List<double>();
         private List<double> CriticalDamageInflictedValues = new List<double>();
         private List<double> SimpleDamageInflictedValues = new List<double>();
+        private List<string> TargetEvadedYourAttack_List = new List<string>();
+        private List<string> TargetDodgedYourAttack_List = new List<string>();
         private List<DateTime> entryTimes = new List<DateTime>();
 
         private System.Threading.Timer debounceTimer;
@@ -46,7 +70,19 @@ namespace Entropia
 
         private async void FrmReportDashboard_Load(object sender, EventArgs e)
         {
-            
+            txtInputFilePath.Text = "C:\\Users\\Salman Naveed\\Downloads\\Entropia\\chat.log";
+            txtOutputFilePath.Text = "C:\\Users\\Salman Naveed\\Downloads\\Entropia\\" + DateTime.Now.ToString();
+
+            CostOfAttack.Columns.Add("Description");
+            CostOfAttack.Columns.Add("Value");
+            CostOfAttack.Rows.Add("Weapon + Amplifier + Metric + T4",60.5904);
+            CostOfAttack.Rows.Add("Weapon + Amplifier + Metric + T0", 47.8560);
+            CostOfAttack.Rows.Add("Weapon + Amplifier + T4", 60.5704);
+            CostOfAttack.Rows.Add("Weapon + Amplifier + T0", 47.8360);
+            txtCostofAttacks.Properties.DataSource = CostOfAttack;
+            txtCostofAttacks.Properties.ValueMember = "Value";
+            txtCostofAttacks.Properties.DisplayMember = "Value";
+            txtCostofAttacks.EditValue = 60.5904;
         }
 
 
@@ -122,9 +158,9 @@ namespace Entropia
                 {
                     CalculateAndDisplayResults();
                 }
-                if (lblhit.InvokeRequired)
+                if (lblTotalInflictedDamage.InvokeRequired)
                 {
-                    lblhit.Invoke(new Action(() => CalculateAndDisplayResults()));
+                    lblTotalInflictedDamage.Invoke(new Action(() => CalculateAndDisplayResults()));
                 }
                 else
                 {
@@ -154,6 +190,194 @@ namespace Entropia
                 {
                     CalculateAndDisplayResults();
                 }
+
+                if (LBL_EvadedAttackCount.InvokeRequired)
+                {
+                    LBL_EvadedAttackCount.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+                if (LBL_DodgedAttackCount.InvokeRequired)
+                {
+                    LBL_DodgedAttackCount.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+
+                if (LblHitDamageSum.InvokeRequired)
+                {
+                    LblHitDamageSum.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+                if (LblNumberOfAttacks.InvokeRequired)
+                {
+                    LblNumberOfAttacks.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+
+
+                if (lblTotalCost.InvokeRequired)
+                {
+                    lblTotalCost.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+                if (lblDamagePerPec.InvokeRequired)
+                {
+                    lblDamagePerPec.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+                if (lblTotalCostPed.InvokeRequired)
+                {
+                    lblTotalCostPed.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+                #region Enhancer Region
+
+                if (Lbl_Enhancer01_Value.InvokeRequired)
+                {
+                    Lbl_Enhancer01_Value.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+                if (Lbl_Enhancer01_Percentage.InvokeRequired)
+                {
+                    Lbl_Enhancer01_Percentage.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+
+                if (Lbl_Enhancer02_Value.InvokeRequired)
+                {
+                    Lbl_Enhancer02_Value.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+                if (Lbl_Enhancer02_Percentage.InvokeRequired)
+                {
+                    Lbl_Enhancer02_Percentage.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+
+                if (Lbl_Enhancer03_Value.InvokeRequired)
+                {
+                    Lbl_Enhancer03_Value.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+                if (Lbl_Enhancer03_Percentage.InvokeRequired)
+                {
+                    Lbl_Enhancer03_Percentage.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+
+
+                if (Lbl_Enhancer04_Value.InvokeRequired)
+                {
+                    Lbl_Enhancer04_Value.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+                if (Lbl_Enhancer04_Percentage.InvokeRequired)
+                {
+                    Lbl_Enhancer04_Percentage.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+
+                if (Lbl_Enhancer05_Value.InvokeRequired)
+                {
+                    Lbl_Enhancer05_Value.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+                if (Lbl_Enhancer05_Percentage.InvokeRequired)
+                {
+                    Lbl_Enhancer05_Percentage.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+
+                if (Lbl_Enhancer06_Value.InvokeRequired)
+                {
+                    Lbl_Enhancer06_Value.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+                if (Lbl_Enhancer06_Percentage.InvokeRequired)
+                {
+                    Lbl_Enhancer06_Percentage.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+                #endregion
+                if (lblTotalCostPed.InvokeRequired)
+                {
+                    lblTotalCostPed.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+
                 await ReadFileAsync();
             }, null, debounceTime, Timeout.Infinite);
         }
@@ -161,11 +385,15 @@ namespace Entropia
 
         private void ProcessLine(string line)
         {
+            // 2024-05-30 11:58:25 [System] [] You received Shrapnel x (75934) Value: 7.59 PED
             if (shrapnelRegex.IsMatch(line))
             {
+                //[System][] You received Shrapnel
+                 
                 WriteToFile(line);
 
                 var match = pedRegex.Match(line);
+               
                 if (match.Success)
                 {
                     if (double.TryParse(match.Groups[1].Value, out double pedValue))
@@ -230,6 +458,61 @@ namespace Entropia
                 }
 
             }
+
+
+            if (TargetEvadedYourAttack_Regex.IsMatch(line))
+            {
+                WriteToFile(line);
+                TargetEvadedYourAttack_List.Add(line);
+
+            }
+
+            if (TargetDodgedYourAttack_Regex.IsMatch(line))
+            {
+                WriteToFile(line);
+                TargetDodgedYourAttack_List.Add(line);
+
+            }
+
+
+            #region Enhancer 
+
+            if (Enhancer01_Regex.IsMatch(line))
+            {
+                WriteToFile(line);
+                Enhancer01_List.Add(line);
+            }
+
+            if (Enhancer02_Regex.IsMatch(line))
+            {
+                WriteToFile(line);
+                Enhancer02_List.Add(line);
+            }
+
+            if (Enhancer03_Regex.IsMatch(line))
+            {
+                WriteToFile(line);
+                Enhancer03_List.Add(line);
+            }
+
+            if (Enhancer04_Regex.IsMatch(line))
+            {
+                WriteToFile(line);
+                Enhancer04_List.Add(line);
+            }
+
+            if (Enhancer05_Regex.IsMatch(line))
+            {
+                WriteToFile(line);
+                Enhancer01_List.Add(line);
+            }
+
+            if (Enhancer06_Regex.IsMatch(line))
+            {
+                WriteToFile(line);
+                Enhancer06_List.Add(line);
+            }
+            #endregion
         }
 
         private void WriteToFile(string line)
@@ -260,6 +543,8 @@ namespace Entropia
             double DamageInflictedCount = CriticalDamageInflictedValues.Count();
             double SimpleHitSum = SimpleDamageInflictedValues.Sum();
             double SimpleHitCount = SimpleDamageInflictedValues.Count();
+            double Count_ofDodgedAttack = TargetDodgedYourAttack_List.Count();
+            double Count_ofMissedAttack = TargetEvadedYourAttack_List.Count();
             // Update the UI on the main thread
             if (lblPED.InvokeRequired)
             {
@@ -305,22 +590,31 @@ namespace Entropia
                 lblCriticalDamageCount.Text = $"{DamageInflictedCount:F2}";
             }
 
-            if (lblhit.InvokeRequired)
+            if (lblTotalInflictedDamage.InvokeRequired)
             {
-                lblhit.Invoke(new Action(() => lblhit.Text = $"{SimpleHitSum + DamageInflictedValue:F2}"));
+                lblTotalInflictedDamage.Invoke(new Action(() => lblTotalInflictedDamage.Text = $"{SimpleHitSum + DamageInflictedValue:F2}"));
             }
             else
             {
-                lblhit.Text = $"{SimpleHitSum + DamageInflictedValue:F2}";
+                lblTotalInflictedDamage.Text = $"{SimpleHitSum + DamageInflictedValue:F2}";
             }
 
             if (lblhitCount.InvokeRequired)
             {
-                lblhitCount.Invoke(new Action(() => lblhitCount.Text = $"{SimpleHitCount+ DamageInflictedCount:F2}"));
+                lblhitCount.Invoke(new Action(() => lblhitCount.Text = $"{SimpleHitCount:F2}"));
             }
             else
             {
-                lblhitCount.Text = $"{SimpleHitCount+ DamageInflictedCount:F2}";
+                lblhitCount.Text = $"{SimpleHitCount:F2}";
+            }
+
+            if (LblHitDamageSum.InvokeRequired)
+            {
+                LblHitDamageSum.Invoke(new Action(() => LblHitDamageSum.Text = $"{SimpleHitSum:F2}"));
+            }
+            else
+            {
+                LblHitDamageSum.Text = $"{SimpleHitSum:F2}";
             }
 
             // 0  = 8+2=10
@@ -346,6 +640,183 @@ namespace Entropia
             {
                 lblHitPercentage.Text = $"{hitPercentage:F2}";
             }
+
+
+            if (LBL_DodgedAttackCount.InvokeRequired)
+            {
+                LBL_DodgedAttackCount.Invoke(new Action(() => LBL_DodgedAttackCount.Text = $"{Count_ofDodgedAttack:F2}"));
+            }
+            else
+            {
+                LBL_DodgedAttackCount.Text = $"{Count_ofDodgedAttack:F2}";
+            }
+
+
+            if (LBL_EvadedAttackCount.InvokeRequired)
+            {
+                LBL_EvadedAttackCount.Invoke(new Action(() => LBL_EvadedAttackCount.Text = $"{Count_ofMissedAttack:F2}"));
+            }
+            else
+            {
+                LBL_EvadedAttackCount.Text = $"{Count_ofMissedAttack:F2}";
+            }
+
+            double TotalNumberOfAttacks = Count_ofMissedAttack + Count_ofDodgedAttack + SimpleHitCount + DamageInflictedCount;
+            if (LblNumberOfAttacks.InvokeRequired)
+            {
+                LblNumberOfAttacks.Invoke(new Action(() => LblNumberOfAttacks.Text = $"{TotalNumberOfAttacks:F2}"));
+            }
+            else
+            {
+                LblNumberOfAttacks.Text = $"{TotalNumberOfAttacks:F2}";
+            }
+
+
+            double CostPerAttack = 0;
+            double.TryParse(txtCostofAttacks.Text, out CostPerAttack);
+
+            if (lblTotalCost.InvokeRequired)
+            {
+                lblTotalCost.Invoke(new Action(() => lblTotalCost.Text = Math.Round(TotalNumberOfAttacks * CostPerAttack,4).ToString()));
+            }
+            else
+            {
+                lblTotalCost.Text = Math.Round(TotalNumberOfAttacks * CostPerAttack, 4).ToString();
+            }
+            double TotalCost = TotalNumberOfAttacks * CostPerAttack;
+            double TotalInflictedDamage = SimpleHitSum + DamageInflictedValue;
+            if (lblDamagePerPec.InvokeRequired)
+            {
+                lblDamagePerPec.Invoke(new Action(() => lblDamagePerPec.Text = Math.Round(TotalInflictedDamage / TotalCost, 4).ToString()));
+            }
+            else
+            {
+                lblDamagePerPec.Text = Math.Round(TotalInflictedDamage / TotalCost, 4).ToString();
+            }
+
+            if (lblTotalCostPed.InvokeRequired)
+            {
+                lblTotalCostPed.Invoke(new Action(() => lblTotalCostPed.Text = Math.Round(TotalCost / 100, 4).ToString()));
+            }
+            else
+            {
+                lblTotalCostPed.Text = Math.Round(TotalCost / 100, 4).ToString();
+            }
+
+            #region Enhancer
+
+            double Enhancer01_Count = Enhancer01_List.Count();
+            double Enhancer02_Count = Enhancer02_List.Count();
+            double Enhancer03_Count = Enhancer03_List.Count();
+            double Enhancer04_Count = Enhancer04_List.Count();
+            double Enhancer05_Count = Enhancer05_List.Count();
+            double Enhancer06_Count = Enhancer06_List.Count();
+
+            double TotalEnhancer = Enhancer01_Count + Enhancer02_Count + Enhancer03_Count + Enhancer04_Count + Enhancer05_Count + Enhancer06_Count;
+
+            if (Lbl_Enhancer01_Value.InvokeRequired)
+            {
+                Lbl_Enhancer01_Value.Invoke(new Action(() => Lbl_Enhancer01_Value.Text = Math.Round(Enhancer01_Count).ToString()));
+            }
+            else
+            {
+                Lbl_Enhancer01_Value.Text = Math.Round(Enhancer01_Count).ToString();
+            }
+            if (Lbl_Enhancer01_Percentage.InvokeRequired)
+            {
+                Lbl_Enhancer01_Percentage.Invoke(new Action(() => Lbl_Enhancer01_Percentage.Text = Math.Round((Enhancer01_Count / TotalEnhancer)*100,4).ToString() + " %"));
+            }
+            else
+            {
+                Lbl_Enhancer01_Percentage.Text = Math.Round((Enhancer01_Count / TotalEnhancer) * 100, 4).ToString() + " %";
+            }
+
+            if (Lbl_Enhancer02_Value.InvokeRequired)
+            {
+                Lbl_Enhancer02_Value.Invoke(new Action(() => Lbl_Enhancer02_Value.Text = Math.Round(Enhancer02_Count).ToString()));
+            }
+            else
+            {
+                Lbl_Enhancer02_Value.Text = Math.Round(Enhancer02_Count).ToString();
+            }
+            if (Lbl_Enhancer02_Percentage.InvokeRequired)
+            {
+                Lbl_Enhancer02_Percentage.Invoke(new Action(() => Lbl_Enhancer02_Percentage.Text = Math.Round((Enhancer02_Count / TotalEnhancer) * 100, 4).ToString() + " %"));
+            }
+            else
+            {
+                Lbl_Enhancer02_Percentage.Text = Math.Round((Enhancer02_Count / TotalEnhancer) * 100, 4).ToString() + " %";
+            }
+
+
+            if (Lbl_Enhancer03_Value.InvokeRequired)
+            {
+                Lbl_Enhancer03_Value.Invoke(new Action(() => Lbl_Enhancer03_Value.Text = Math.Round(Enhancer03_Count).ToString()));
+            }
+            else
+            {
+                Lbl_Enhancer03_Value.Text = Math.Round(Enhancer03_Count).ToString();
+            }
+            if (Lbl_Enhancer03_Percentage.InvokeRequired)
+            {
+                Lbl_Enhancer03_Percentage.Invoke(new Action(() => Lbl_Enhancer03_Percentage.Text = Math.Round((Enhancer03_Count / TotalEnhancer) * 100, 4).ToString() + " %"));
+            }
+            else
+            {
+                Lbl_Enhancer03_Percentage.Text = Math.Round((Enhancer03_Count / TotalEnhancer) * 100, 4).ToString() + " %";
+            }
+
+            if (Lbl_Enhancer04_Value.InvokeRequired)
+            {
+                Lbl_Enhancer04_Value.Invoke(new Action(() => Lbl_Enhancer04_Value.Text = Math.Round(Enhancer04_Count).ToString()));
+            }
+            else
+            {
+                Lbl_Enhancer04_Value.Text = Math.Round(Enhancer04_Count).ToString();
+            }
+            if (Lbl_Enhancer04_Percentage.InvokeRequired)
+            {
+                Lbl_Enhancer04_Percentage.Invoke(new Action(() => Lbl_Enhancer04_Percentage.Text = Math.Round((Enhancer04_Count / TotalEnhancer) * 100, 4).ToString() + " %"));
+            }
+            else
+            {
+                Lbl_Enhancer04_Percentage.Text = Math.Round((Enhancer04_Count / TotalEnhancer) * 100, 4).ToString() + " %";
+            }
+
+            if (Lbl_Enhancer05_Value.InvokeRequired)
+            {
+                Lbl_Enhancer05_Value.Invoke(new Action(() => Lbl_Enhancer05_Value.Text = Math.Round(Enhancer05_Count).ToString()));
+            }
+            else
+            {
+                Lbl_Enhancer05_Value.Text = Math.Round(Enhancer05_Count).ToString();
+            }
+            if (Lbl_Enhancer05_Percentage.InvokeRequired)
+            {
+                Lbl_Enhancer05_Percentage.Invoke(new Action(() => Lbl_Enhancer05_Percentage.Text = Math.Round((Enhancer05_Count / TotalEnhancer) * 100, 4).ToString() + " %"));
+            }
+            else
+            {
+                Lbl_Enhancer05_Percentage.Text = Math.Round((Enhancer05_Count / TotalEnhancer) * 100, 4).ToString() + " %";
+            }
+
+            if (Lbl_Enhancer06_Value.InvokeRequired)
+            {
+                Lbl_Enhancer06_Value.Invoke(new Action(() => Lbl_Enhancer06_Value.Text = Math.Round(Enhancer06_Count).ToString()));
+            }
+            else
+            {
+                Lbl_Enhancer06_Value.Text = Math.Round(Enhancer06_Count).ToString();
+            }
+            if (Lbl_Enhancer06_Percentage.InvokeRequired)
+            {
+                Lbl_Enhancer06_Percentage.Invoke(new Action(() => Lbl_Enhancer06_Percentage.Text = Math.Round((Enhancer06_Count / TotalEnhancer) * 100, 4).ToString() + " %"));
+            }
+            else
+            {
+                Lbl_Enhancer06_Percentage.Text = Math.Round((Enhancer06_Count / TotalEnhancer) * 100, 4).ToString() + " %";
+            }
+            #endregion
         }
 
         private int CountEntries()
@@ -437,6 +908,30 @@ namespace Entropia
         private void labelControl2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCostofAttacks_EditValueChanged(object sender, EventArgs e)
+        {
+            double CostPerAttack = 0;
+            double.TryParse(txtCostofAttacks.Text, out CostPerAttack);
+
+            double TotalNumberofAttacks = 0;
+            double.TryParse(LblNumberOfAttacks.Text, out TotalNumberofAttacks);
+
+            double CostPerPec = TotalNumberofAttacks * CostPerAttack;
+
+            lblTotalCost.Text = Math.Round(CostPerPec, 4).ToString();
+
+            lblTotalCostPed.Text = Math.Round(CostPerPec/100, 4).ToString();
+
+           
+            double SimpleHitSum = 0;
+            double CriticalHitSum = 0;
+            double.TryParse(LblHitDamageSum.Text, out SimpleHitSum);
+            double.TryParse(lblTotalInflictedDamage.Text, out SimpleHitSum);
+            double TotalInflictedDamage = SimpleHitSum+CriticalHitSum;
+
+            lblDamagePerPec.Text = Math.Round(TotalInflictedDamage/CostPerPec, 4).ToString();
         }
     }
 }
