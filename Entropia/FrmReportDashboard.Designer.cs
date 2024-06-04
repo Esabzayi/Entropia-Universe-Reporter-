@@ -59,10 +59,14 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.lblPED = new DevExpress.XtraEditors.LabelControl();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblRfilleDamage = new DevExpress.XtraEditors.LabelControl();
+            this.LblSwordDamage = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             this.LblRiffleCount = new DevExpress.XtraEditors.LabelControl();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.lblswordcount = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.txtAmp = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -122,10 +126,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
             this.fileWatcher = new System.IO.FileSystemWatcher();
-            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
-            this.LblSwordDamage = new DevExpress.XtraEditors.LabelControl();
-            this.lblRfilleDamage = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtInputFilePath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FrmReportDashboardlayoutControl1ConvertedLayout)).BeginInit();
             this.FrmReportDashboardlayoutControl1ConvertedLayout.SuspendLayout();
@@ -161,14 +161,14 @@
             // txtInputFilePath
             // 
             this.txtInputFilePath.EditValue = "";
-            this.txtInputFilePath.Location = new System.Drawing.Point(95, 14);
+            this.txtInputFilePath.Location = new System.Drawing.Point(91, 12);
             this.txtInputFilePath.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtInputFilePath.Name = "txtInputFilePath";
             this.txtInputFilePath.Properties.Appearance.BackColor = System.Drawing.Color.PapayaWhip;
             this.txtInputFilePath.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInputFilePath.Properties.Appearance.Options.UseBackColor = true;
             this.txtInputFilePath.Properties.Appearance.Options.UseFont = true;
-            this.txtInputFilePath.Size = new System.Drawing.Size(657, 32);
+            this.txtInputFilePath.Size = new System.Drawing.Size(661, 32);
             this.txtInputFilePath.StyleController = this.FrmReportDashboardlayoutControl1ConvertedLayout;
             this.txtInputFilePath.TabIndex = 0;
             // 
@@ -190,11 +190,11 @@
             // gridControl1
             // 
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.gridControl1.Location = new System.Drawing.Point(14, 50);
+            this.gridControl1.Location = new System.Drawing.Point(12, 48);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(473, 683);
+            this.gridControl1.Size = new System.Drawing.Size(474, 687);
             this.gridControl1.TabIndex = 8;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -306,7 +306,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel11, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel13, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel14, 2, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(491, 50);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(490, 48);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -315,12 +315,12 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1049, 683);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1052, 687);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // tableLayoutPanel15
             // 
-            this.tableLayoutPanel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tableLayoutPanel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.tableLayoutPanel15.ColumnCount = 3;
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -336,7 +336,7 @@
             this.tableLayoutPanel15.Controls.Add(this.Lbl_Enhancer04_Percentage, 2, 0);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel15.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(789, 274);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(789, 276);
             this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 3;
@@ -344,126 +344,144 @@
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(256, 132);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(259, 133);
             this.tableLayoutPanel15.TabIndex = 12;
             // 
             // labelControl31
             // 
             this.labelControl31.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl31.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl31.Appearance.Options.UseFont = true;
+            this.labelControl31.Appearance.Options.UseForeColor = true;
             this.labelControl31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl31.Location = new System.Drawing.Point(4, 90);
             this.labelControl31.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl31.Name = "labelControl31";
-            this.labelControl31.Size = new System.Drawing.Size(77, 40);
+            this.labelControl31.Size = new System.Drawing.Size(78, 41);
             this.labelControl31.TabIndex = 4;
             this.labelControl31.Text = "Enhancer 6";
             // 
             // Lbl_Enhancer06_Value
             // 
             this.Lbl_Enhancer06_Value.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.Lbl_Enhancer06_Value.Appearance.ForeColor = System.Drawing.Color.White;
             this.Lbl_Enhancer06_Value.Appearance.Options.UseFont = true;
+            this.Lbl_Enhancer06_Value.Appearance.Options.UseForeColor = true;
             this.Lbl_Enhancer06_Value.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_Enhancer06_Value.Location = new System.Drawing.Point(89, 90);
+            this.Lbl_Enhancer06_Value.Location = new System.Drawing.Point(90, 90);
             this.Lbl_Enhancer06_Value.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Lbl_Enhancer06_Value.Name = "Lbl_Enhancer06_Value";
             this.Lbl_Enhancer06_Value.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Lbl_Enhancer06_Value.Size = new System.Drawing.Size(77, 40);
+            this.Lbl_Enhancer06_Value.Size = new System.Drawing.Size(78, 41);
             this.Lbl_Enhancer06_Value.TabIndex = 3;
             this.Lbl_Enhancer06_Value.Text = "0";
             // 
             // Lbl_Enhancer06_Percentage
             // 
             this.Lbl_Enhancer06_Percentage.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.Lbl_Enhancer06_Percentage.Appearance.ForeColor = System.Drawing.Color.White;
             this.Lbl_Enhancer06_Percentage.Appearance.Options.UseFont = true;
+            this.Lbl_Enhancer06_Percentage.Appearance.Options.UseForeColor = true;
             this.Lbl_Enhancer06_Percentage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_Enhancer06_Percentage.Location = new System.Drawing.Point(174, 90);
+            this.Lbl_Enhancer06_Percentage.Location = new System.Drawing.Point(176, 90);
             this.Lbl_Enhancer06_Percentage.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Lbl_Enhancer06_Percentage.Name = "Lbl_Enhancer06_Percentage";
             this.Lbl_Enhancer06_Percentage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Lbl_Enhancer06_Percentage.Size = new System.Drawing.Size(78, 40);
+            this.Lbl_Enhancer06_Percentage.Size = new System.Drawing.Size(79, 41);
             this.Lbl_Enhancer06_Percentage.TabIndex = 2;
             this.Lbl_Enhancer06_Percentage.Text = "0";
             // 
             // labelControl28
             // 
             this.labelControl28.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl28.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl28.Appearance.Options.UseFont = true;
+            this.labelControl28.Appearance.Options.UseForeColor = true;
             this.labelControl28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl28.Location = new System.Drawing.Point(4, 2);
             this.labelControl28.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl28.Name = "labelControl28";
-            this.labelControl28.Size = new System.Drawing.Size(77, 40);
+            this.labelControl28.Size = new System.Drawing.Size(78, 40);
             this.labelControl28.TabIndex = 1;
             this.labelControl28.Text = "Enhancer 4";
             // 
             // labelControl32
             // 
             this.labelControl32.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl32.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl32.Appearance.Options.UseFont = true;
+            this.labelControl32.Appearance.Options.UseForeColor = true;
             this.labelControl32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl32.Location = new System.Drawing.Point(4, 46);
             this.labelControl32.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl32.Name = "labelControl32";
-            this.labelControl32.Size = new System.Drawing.Size(77, 40);
+            this.labelControl32.Size = new System.Drawing.Size(78, 40);
             this.labelControl32.TabIndex = 7;
             this.labelControl32.Text = "Enhancer 5";
             // 
             // Lbl_Enhancer05_Value
             // 
             this.Lbl_Enhancer05_Value.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.Lbl_Enhancer05_Value.Appearance.ForeColor = System.Drawing.Color.White;
             this.Lbl_Enhancer05_Value.Appearance.Options.UseFont = true;
+            this.Lbl_Enhancer05_Value.Appearance.Options.UseForeColor = true;
             this.Lbl_Enhancer05_Value.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_Enhancer05_Value.Location = new System.Drawing.Point(89, 46);
+            this.Lbl_Enhancer05_Value.Location = new System.Drawing.Point(90, 46);
             this.Lbl_Enhancer05_Value.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Lbl_Enhancer05_Value.Name = "Lbl_Enhancer05_Value";
             this.Lbl_Enhancer05_Value.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Lbl_Enhancer05_Value.Size = new System.Drawing.Size(77, 40);
+            this.Lbl_Enhancer05_Value.Size = new System.Drawing.Size(78, 40);
             this.Lbl_Enhancer05_Value.TabIndex = 8;
             this.Lbl_Enhancer05_Value.Text = "0";
             // 
             // Lbl_Enhancer05_Percentage
             // 
             this.Lbl_Enhancer05_Percentage.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.Lbl_Enhancer05_Percentage.Appearance.ForeColor = System.Drawing.Color.White;
             this.Lbl_Enhancer05_Percentage.Appearance.Options.UseFont = true;
+            this.Lbl_Enhancer05_Percentage.Appearance.Options.UseForeColor = true;
             this.Lbl_Enhancer05_Percentage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_Enhancer05_Percentage.Location = new System.Drawing.Point(174, 46);
+            this.Lbl_Enhancer05_Percentage.Location = new System.Drawing.Point(176, 46);
             this.Lbl_Enhancer05_Percentage.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Lbl_Enhancer05_Percentage.Name = "Lbl_Enhancer05_Percentage";
             this.Lbl_Enhancer05_Percentage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Lbl_Enhancer05_Percentage.Size = new System.Drawing.Size(78, 40);
+            this.Lbl_Enhancer05_Percentage.Size = new System.Drawing.Size(79, 40);
             this.Lbl_Enhancer05_Percentage.TabIndex = 9;
             this.Lbl_Enhancer05_Percentage.Text = "0";
             // 
             // Lbl_Enhancer04_Value
             // 
             this.Lbl_Enhancer04_Value.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.Lbl_Enhancer04_Value.Appearance.ForeColor = System.Drawing.Color.White;
             this.Lbl_Enhancer04_Value.Appearance.Options.UseFont = true;
+            this.Lbl_Enhancer04_Value.Appearance.Options.UseForeColor = true;
             this.Lbl_Enhancer04_Value.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_Enhancer04_Value.Location = new System.Drawing.Point(89, 2);
+            this.Lbl_Enhancer04_Value.Location = new System.Drawing.Point(90, 2);
             this.Lbl_Enhancer04_Value.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Lbl_Enhancer04_Value.Name = "Lbl_Enhancer04_Value";
             this.Lbl_Enhancer04_Value.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Lbl_Enhancer04_Value.Size = new System.Drawing.Size(77, 40);
+            this.Lbl_Enhancer04_Value.Size = new System.Drawing.Size(78, 40);
             this.Lbl_Enhancer04_Value.TabIndex = 10;
             this.Lbl_Enhancer04_Value.Text = "0";
             // 
             // Lbl_Enhancer04_Percentage
             // 
             this.Lbl_Enhancer04_Percentage.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.Lbl_Enhancer04_Percentage.Appearance.ForeColor = System.Drawing.Color.White;
             this.Lbl_Enhancer04_Percentage.Appearance.Options.UseFont = true;
+            this.Lbl_Enhancer04_Percentage.Appearance.Options.UseForeColor = true;
             this.Lbl_Enhancer04_Percentage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lbl_Enhancer04_Percentage.Location = new System.Drawing.Point(174, 2);
+            this.Lbl_Enhancer04_Percentage.Location = new System.Drawing.Point(176, 2);
             this.Lbl_Enhancer04_Percentage.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Lbl_Enhancer04_Percentage.Name = "Lbl_Enhancer04_Percentage";
             this.Lbl_Enhancer04_Percentage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Lbl_Enhancer04_Percentage.Size = new System.Drawing.Size(78, 40);
+            this.Lbl_Enhancer04_Percentage.Size = new System.Drawing.Size(79, 40);
             this.Lbl_Enhancer04_Percentage.TabIndex = 11;
             this.Lbl_Enhancer04_Percentage.Text = "0";
             // 
             // tableLayoutPanel10
             // 
-            this.tableLayoutPanel10.BackColor = System.Drawing.Color.Beige;
+            this.tableLayoutPanel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tableLayoutPanel10.ColumnCount = 2;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -472,20 +490,20 @@
             this.tableLayoutPanel10.Controls.Add(this.labelControl12, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.lblHitPercentage, 1, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(4, 410);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(4, 413);
             this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(254, 132);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(254, 133);
             this.tableLayoutPanel10.TabIndex = 8;
             // 
             // labelControl9
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl9.Appearance.Options.UseFont = true;
             this.labelControl9.Appearance.Options.UseForeColor = true;
             this.labelControl9.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -493,14 +511,14 @@
             this.labelControl9.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.labelControl9.Size = new System.Drawing.Size(119, 62);
+            this.labelControl9.Size = new System.Drawing.Size(119, 63);
             this.labelControl9.TabIndex = 5;
             this.labelControl9.Text = "C. Hit %";
             // 
             // lblHitCPercentage
             // 
             this.lblHitCPercentage.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.lblHitCPercentage.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblHitCPercentage.Appearance.ForeColor = System.Drawing.Color.White;
             this.lblHitCPercentage.Appearance.Options.UseFont = true;
             this.lblHitCPercentage.Appearance.Options.UseForeColor = true;
             this.lblHitCPercentage.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -508,14 +526,14 @@
             this.lblHitCPercentage.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.lblHitCPercentage.Name = "lblHitCPercentage";
             this.lblHitCPercentage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.lblHitCPercentage.Size = new System.Drawing.Size(119, 62);
+            this.lblHitCPercentage.Size = new System.Drawing.Size(119, 63);
             this.lblHitCPercentage.TabIndex = 4;
             this.lblHitCPercentage.Text = "%";
             // 
             // labelControl12
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl12.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl12.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl12.Appearance.Options.UseFont = true;
             this.labelControl12.Appearance.Options.UseForeColor = true;
             this.labelControl12.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -530,7 +548,9 @@
             // lblHitPercentage
             // 
             this.lblHitPercentage.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lblHitPercentage.Appearance.ForeColor = System.Drawing.Color.White;
             this.lblHitPercentage.Appearance.Options.UseFont = true;
+            this.lblHitPercentage.Appearance.Options.UseForeColor = true;
             this.lblHitPercentage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblHitPercentage.Location = new System.Drawing.Point(131, 2);
             this.lblHitPercentage.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -542,7 +562,7 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(132)))), ((int)(((byte)(197)))));
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -558,7 +578,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(254, 132);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(254, 133);
             this.tableLayoutPanel2.TabIndex = 0;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
@@ -573,7 +593,7 @@
             this.lblLot.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.lblLot.Name = "lblLot";
             this.lblLot.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.lblLot.Size = new System.Drawing.Size(119, 62);
+            this.lblLot.Size = new System.Drawing.Size(119, 63);
             this.lblLot.TabIndex = 2;
             this.lblLot.Text = "0";
             // 
@@ -601,7 +621,7 @@
             this.labelControl2.Location = new System.Drawing.Point(4, 68);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(119, 62);
+            this.labelControl2.Size = new System.Drawing.Size(119, 63);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Loot Events";
             // 
@@ -622,7 +642,7 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.BackColor = System.Drawing.Color.Lavender;
+            this.tableLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -643,13 +663,59 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(254, 132);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(254, 133);
             this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // lblRfilleDamage
+            // 
+            this.lblRfilleDamage.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lblRfilleDamage.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblRfilleDamage.Appearance.Options.UseFont = true;
+            this.lblRfilleDamage.Appearance.Options.UseForeColor = true;
+            this.lblRfilleDamage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblRfilleDamage.Location = new System.Drawing.Point(131, 101);
+            this.lblRfilleDamage.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.lblRfilleDamage.Name = "lblRfilleDamage";
+            this.lblRfilleDamage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lblRfilleDamage.Size = new System.Drawing.Size(119, 30);
+            this.lblRfilleDamage.TabIndex = 3;
+            this.lblRfilleDamage.Text = "0";
+            // 
+            // LblSwordDamage
+            // 
+            this.LblSwordDamage.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.LblSwordDamage.Appearance.ForeColor = System.Drawing.Color.White;
+            this.LblSwordDamage.Appearance.Options.UseFont = true;
+            this.LblSwordDamage.Appearance.Options.UseForeColor = true;
+            this.LblSwordDamage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LblSwordDamage.Location = new System.Drawing.Point(131, 68);
+            this.LblSwordDamage.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.LblSwordDamage.Name = "LblSwordDamage";
+            this.LblSwordDamage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.LblSwordDamage.Size = new System.Drawing.Size(119, 29);
+            this.LblSwordDamage.TabIndex = 3;
+            this.LblSwordDamage.Text = "0";
+            // 
+            // labelControl23
+            // 
+            this.labelControl23.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl23.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl23.Appearance.Options.UseFont = true;
+            this.labelControl23.Appearance.Options.UseForeColor = true;
+            this.labelControl23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl23.Location = new System.Drawing.Point(4, 68);
+            this.labelControl23.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl23.Name = "labelControl23";
+            this.labelControl23.Size = new System.Drawing.Size(119, 29);
+            this.labelControl23.TabIndex = 3;
+            this.labelControl23.Text = "Sword Damage";
             // 
             // LblRiffleCount
             // 
             this.LblRiffleCount.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.LblRiffleCount.Appearance.ForeColor = System.Drawing.Color.White;
             this.LblRiffleCount.Appearance.Options.UseFont = true;
+            this.LblRiffleCount.Appearance.Options.UseForeColor = true;
             this.LblRiffleCount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LblRiffleCount.Location = new System.Drawing.Point(131, 35);
             this.LblRiffleCount.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -662,7 +728,9 @@
             // labelControl20
             // 
             this.labelControl20.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl20.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl20.Appearance.Options.UseFont = true;
+            this.labelControl20.Appearance.Options.UseForeColor = true;
             this.labelControl20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl20.Location = new System.Drawing.Point(4, 2);
             this.labelControl20.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -674,18 +742,23 @@
             // labelControl21
             // 
             this.labelControl21.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl21.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl21.Appearance.Options.UseFont = true;
+            this.labelControl21.Appearance.Options.UseForeColor = true;
+            this.labelControl21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl21.Location = new System.Drawing.Point(4, 35);
             this.labelControl21.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl21.Name = "labelControl21";
-            this.labelControl21.Size = new System.Drawing.Size(89, 18);
+            this.labelControl21.Size = new System.Drawing.Size(119, 29);
             this.labelControl21.TabIndex = 2;
             this.labelControl21.Text = "Riffle Count";
             // 
             // lblswordcount
             // 
             this.lblswordcount.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lblswordcount.Appearance.ForeColor = System.Drawing.Color.White;
             this.lblswordcount.Appearance.Options.UseFont = true;
+            this.lblswordcount.Appearance.Options.UseForeColor = true;
             this.lblswordcount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblswordcount.Location = new System.Drawing.Point(131, 2);
             this.lblswordcount.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -695,9 +768,23 @@
             this.lblswordcount.TabIndex = 3;
             this.lblswordcount.Text = "0";
             // 
+            // labelControl24
+            // 
+            this.labelControl24.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl24.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl24.Appearance.Options.UseFont = true;
+            this.labelControl24.Appearance.Options.UseForeColor = true;
+            this.labelControl24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl24.Location = new System.Drawing.Point(4, 101);
+            this.labelControl24.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl24.Name = "labelControl24";
+            this.labelControl24.Size = new System.Drawing.Size(119, 30);
+            this.labelControl24.TabIndex = 5;
+            this.labelControl24.Text = "Riffle Damage";
+            // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.BackColor = System.Drawing.Color.Plum;
+            this.tableLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(240)))));
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.txtAmp, 0, 1);
@@ -710,7 +797,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(253, 132);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(253, 133);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // txtAmp
@@ -724,7 +811,7 @@
             this.txtAmp.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtAmp.Name = "txtAmp";
             this.txtAmp.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.txtAmp.Size = new System.Drawing.Size(245, 62);
+            this.txtAmp.Size = new System.Drawing.Size(245, 63);
             this.txtAmp.TabIndex = 3;
             this.txtAmp.Text = "0";
             // 
@@ -744,7 +831,7 @@
             // 
             // tableLayoutPanel5
             // 
-            this.tableLayoutPanel5.BackColor = System.Drawing.Color.SpringGreen;
+            this.tableLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(213)))), ((int)(((byte)(237)))));
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -759,7 +846,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(256, 132);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(259, 133);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // LblHitDamageSum
@@ -769,11 +856,11 @@
             this.LblHitDamageSum.Appearance.Options.UseFont = true;
             this.LblHitDamageSum.Appearance.Options.UseForeColor = true;
             this.LblHitDamageSum.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LblHitDamageSum.Location = new System.Drawing.Point(132, 68);
+            this.LblHitDamageSum.Location = new System.Drawing.Point(133, 68);
             this.LblHitDamageSum.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.LblHitDamageSum.Name = "LblHitDamageSum";
             this.LblHitDamageSum.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.LblHitDamageSum.Size = new System.Drawing.Size(120, 62);
+            this.LblHitDamageSum.Size = new System.Drawing.Size(122, 63);
             this.LblHitDamageSum.TabIndex = 4;
             this.LblHitDamageSum.Text = "0";
             // 
@@ -787,7 +874,7 @@
             this.labelControl14.Location = new System.Drawing.Point(4, 68);
             this.labelControl14.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(120, 62);
+            this.labelControl14.Size = new System.Drawing.Size(121, 63);
             this.labelControl14.TabIndex = 3;
             this.labelControl14.Text = "Hit Damage";
             // 
@@ -801,7 +888,7 @@
             this.labelControl4.Location = new System.Drawing.Point(4, 2);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(120, 62);
+            this.labelControl4.Size = new System.Drawing.Size(121, 62);
             this.labelControl4.TabIndex = 2;
             this.labelControl4.Text = "C. Hit Damage";
             // 
@@ -812,29 +899,29 @@
             this.lblDamageInflicted.Appearance.Options.UseFont = true;
             this.lblDamageInflicted.Appearance.Options.UseForeColor = true;
             this.lblDamageInflicted.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDamageInflicted.Location = new System.Drawing.Point(132, 2);
+            this.lblDamageInflicted.Location = new System.Drawing.Point(133, 2);
             this.lblDamageInflicted.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.lblDamageInflicted.Name = "lblDamageInflicted";
             this.lblDamageInflicted.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.lblDamageInflicted.Size = new System.Drawing.Size(120, 62);
+            this.lblDamageInflicted.Size = new System.Drawing.Size(122, 62);
             this.lblDamageInflicted.TabIndex = 3;
             this.lblDamageInflicted.Text = "0";
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.BackColor = System.Drawing.Color.Navy;
+            this.tableLayoutPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Controls.Add(this.labelControl5, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 138);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 139);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(254, 132);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(254, 133);
             this.tableLayoutPanel6.TabIndex = 4;
             // 
             // labelControl5
@@ -853,25 +940,25 @@
             // 
             // tableLayoutPanel7
             // 
-            this.tableLayoutPanel7.BackColor = System.Drawing.Color.Moccasin;
+            this.tableLayoutPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(110)))), ((int)(((byte)(86)))));
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Controls.Add(this.lblTotalInflictedDamage, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.labelControl6, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(266, 138);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(266, 139);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(254, 132);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(254, 133);
             this.tableLayoutPanel7.TabIndex = 5;
             // 
             // lblTotalInflictedDamage
             // 
             this.lblTotalInflictedDamage.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.lblTotalInflictedDamage.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalInflictedDamage.Appearance.ForeColor = System.Drawing.Color.White;
             this.lblTotalInflictedDamage.Appearance.Options.UseFont = true;
             this.lblTotalInflictedDamage.Appearance.Options.UseForeColor = true;
             this.lblTotalInflictedDamage.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -879,14 +966,14 @@
             this.lblTotalInflictedDamage.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.lblTotalInflictedDamage.Name = "lblTotalInflictedDamage";
             this.lblTotalInflictedDamage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.lblTotalInflictedDamage.Size = new System.Drawing.Size(246, 62);
+            this.lblTotalInflictedDamage.Size = new System.Drawing.Size(246, 63);
             this.lblTotalInflictedDamage.TabIndex = 3;
             this.lblTotalInflictedDamage.Text = "0";
             // 
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Appearance.Options.UseForeColor = true;
             this.labelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -899,7 +986,7 @@
             // 
             // tableLayoutPanel8
             // 
-            this.tableLayoutPanel8.BackColor = System.Drawing.Color.HotPink;
+            this.tableLayoutPanel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(75)))), ((int)(((byte)(49)))));
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -908,14 +995,14 @@
             this.tableLayoutPanel8.Controls.Add(this.lblhitCount, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.lblCriticalDamageCount, 1, 1);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(528, 138);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(528, 139);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(253, 132);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(253, 133);
             this.tableLayoutPanel8.TabIndex = 6;
             // 
             // labelControl11
@@ -931,7 +1018,7 @@
             this.labelControl11.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.labelControl11.Size = new System.Drawing.Size(118, 62);
+            this.labelControl11.Size = new System.Drawing.Size(118, 63);
             this.labelControl11.TabIndex = 7;
             this.labelControl11.Text = "C. Hit Count";
             // 
@@ -975,13 +1062,13 @@
             this.lblCriticalDamageCount.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.lblCriticalDamageCount.Name = "lblCriticalDamageCount";
             this.lblCriticalDamageCount.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.lblCriticalDamageCount.Size = new System.Drawing.Size(119, 62);
+            this.lblCriticalDamageCount.Size = new System.Drawing.Size(119, 63);
             this.lblCriticalDamageCount.TabIndex = 8;
             this.lblCriticalDamageCount.Text = "0";
             // 
             // tableLayoutPanel9
             // 
-            this.tableLayoutPanel9.BackColor = System.Drawing.Color.LightPink;
+            this.tableLayoutPanel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(55)))), ((int)(((byte)(40)))));
             this.tableLayoutPanel9.ColumnCount = 2;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -990,20 +1077,20 @@
             this.tableLayoutPanel9.Controls.Add(this.LBL_EvadedAttackCount, 1, 0);
             this.tableLayoutPanel9.Controls.Add(this.LBL_DodgedAttackCount, 1, 1);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(789, 138);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(789, 139);
             this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(256, 132);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(259, 133);
             this.tableLayoutPanel9.TabIndex = 7;
             // 
             // labelControl10
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl10.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl10.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl10.Appearance.Options.UseFont = true;
             this.labelControl10.Appearance.Options.UseForeColor = true;
             this.labelControl10.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1011,14 +1098,14 @@
             this.labelControl10.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.labelControl10.Size = new System.Drawing.Size(120, 62);
+            this.labelControl10.Size = new System.Drawing.Size(121, 63);
             this.labelControl10.TabIndex = 5;
             this.labelControl10.Text = "Dodged Attack Count";
             // 
             // labelControl8
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.Appearance.Options.UseForeColor = true;
             this.labelControl8.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1026,53 +1113,57 @@
             this.labelControl8.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.labelControl8.Size = new System.Drawing.Size(120, 62);
+            this.labelControl8.Size = new System.Drawing.Size(121, 62);
             this.labelControl8.TabIndex = 3;
             this.labelControl8.Text = "Evaded Attack Count";
             // 
             // LBL_EvadedAttackCount
             // 
             this.LBL_EvadedAttackCount.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.LBL_EvadedAttackCount.Appearance.ForeColor = System.Drawing.Color.White;
             this.LBL_EvadedAttackCount.Appearance.Options.UseFont = true;
+            this.LBL_EvadedAttackCount.Appearance.Options.UseForeColor = true;
             this.LBL_EvadedAttackCount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LBL_EvadedAttackCount.Location = new System.Drawing.Point(132, 2);
+            this.LBL_EvadedAttackCount.Location = new System.Drawing.Point(133, 2);
             this.LBL_EvadedAttackCount.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.LBL_EvadedAttackCount.Name = "LBL_EvadedAttackCount";
             this.LBL_EvadedAttackCount.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.LBL_EvadedAttackCount.Size = new System.Drawing.Size(120, 62);
+            this.LBL_EvadedAttackCount.Size = new System.Drawing.Size(122, 62);
             this.LBL_EvadedAttackCount.TabIndex = 6;
             this.LBL_EvadedAttackCount.Text = "0";
             // 
             // LBL_DodgedAttackCount
             // 
             this.LBL_DodgedAttackCount.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.LBL_DodgedAttackCount.Appearance.ForeColor = System.Drawing.Color.White;
             this.LBL_DodgedAttackCount.Appearance.Options.UseFont = true;
+            this.LBL_DodgedAttackCount.Appearance.Options.UseForeColor = true;
             this.LBL_DodgedAttackCount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LBL_DodgedAttackCount.Location = new System.Drawing.Point(132, 68);
+            this.LBL_DodgedAttackCount.Location = new System.Drawing.Point(133, 68);
             this.LBL_DodgedAttackCount.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.LBL_DodgedAttackCount.Name = "LBL_DodgedAttackCount";
             this.LBL_DodgedAttackCount.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.LBL_DodgedAttackCount.Size = new System.Drawing.Size(120, 62);
+            this.LBL_DodgedAttackCount.Size = new System.Drawing.Size(122, 63);
             this.LBL_DodgedAttackCount.TabIndex = 7;
             this.LBL_DodgedAttackCount.Text = "0";
             // 
             // tableLayoutPanel11
             // 
-            this.tableLayoutPanel11.BackColor = System.Drawing.Color.ForestGreen;
+            this.tableLayoutPanel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(124)))), ((int)(((byte)(124)))));
             this.tableLayoutPanel11.ColumnCount = 1;
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel12, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.txtCostofAttacks, 0, 2);
             this.tableLayoutPanel11.Controls.Add(this.labelControl16, 0, 1);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(4, 274);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(4, 276);
             this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 3;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(254, 132);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(254, 133);
             this.tableLayoutPanel11.TabIndex = 9;
             // 
             // tableLayoutPanel12
@@ -1165,7 +1256,7 @@
             // labelControl16
             // 
             this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl16.Appearance.ForeColor = System.Drawing.Color.Silver;
+            this.labelControl16.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelControl16.Appearance.Options.UseFont = true;
             this.labelControl16.Appearance.Options.UseForeColor = true;
             this.labelControl16.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1178,7 +1269,7 @@
             // 
             // tableLayoutPanel13
             // 
-            this.tableLayoutPanel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tableLayoutPanel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.tableLayoutPanel13.ColumnCount = 2;
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1189,7 +1280,7 @@
             this.tableLayoutPanel13.Controls.Add(this.labelControl17, 0, 1);
             this.tableLayoutPanel13.Controls.Add(this.lblTotalCostPed, 1, 1);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(266, 274);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(266, 276);
             this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 3;
@@ -1197,13 +1288,13 @@
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(254, 132);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(254, 133);
             this.tableLayoutPanel13.TabIndex = 10;
             // 
             // labelControl15
             // 
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl15.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl15.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl15.Appearance.Options.UseFont = true;
             this.labelControl15.Appearance.Options.UseForeColor = true;
             this.labelControl15.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1217,7 +1308,7 @@
             // lblTotalCost
             // 
             this.lblTotalCost.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.lblTotalCost.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalCost.Appearance.ForeColor = System.Drawing.Color.White;
             this.lblTotalCost.Appearance.Options.UseFont = true;
             this.lblTotalCost.Appearance.Options.UseForeColor = true;
             this.lblTotalCost.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1232,21 +1323,21 @@
             // labelControl19
             // 
             this.labelControl19.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl19.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl19.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl19.Appearance.Options.UseFont = true;
             this.labelControl19.Appearance.Options.UseForeColor = true;
             this.labelControl19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl19.Location = new System.Drawing.Point(4, 90);
             this.labelControl19.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(119, 40);
+            this.labelControl19.Size = new System.Drawing.Size(119, 41);
             this.labelControl19.TabIndex = 6;
             this.labelControl19.Text = "Damage Per Pec";
             // 
             // lblDamagePerPec
             // 
             this.lblDamagePerPec.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDamagePerPec.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblDamagePerPec.Appearance.ForeColor = System.Drawing.Color.White;
             this.lblDamagePerPec.Appearance.Options.UseFont = true;
             this.lblDamagePerPec.Appearance.Options.UseForeColor = true;
             this.lblDamagePerPec.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1254,14 +1345,16 @@
             this.lblDamagePerPec.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.lblDamagePerPec.Name = "lblDamagePerPec";
             this.lblDamagePerPec.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.lblDamagePerPec.Size = new System.Drawing.Size(119, 40);
+            this.lblDamagePerPec.Size = new System.Drawing.Size(119, 41);
             this.lblDamagePerPec.TabIndex = 5;
             this.lblDamagePerPec.Text = "0";
             // 
             // labelControl17
             // 
             this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl17.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl17.Appearance.Options.UseFont = true;
+            this.labelControl17.Appearance.Options.UseForeColor = true;
             this.labelControl17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl17.Location = new System.Drawing.Point(4, 46);
             this.labelControl17.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -1273,7 +1366,9 @@
             // lblTotalCostPed
             // 
             this.lblTotalCostPed.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTotalCostPed.Appearance.ForeColor = System.Drawing.Color.White;
             this.lblTotalCostPed.Appearance.Options.UseFont = true;
+            this.lblTotalCostPed.Appearance.Options.UseForeColor = true;
             this.lblTotalCostPed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTotalCostPed.Location = new System.Drawing.Point(131, 46);
             this.lblTotalCostPed.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -1285,7 +1380,7 @@
             // 
             // tableLayoutPanel14
             // 
-            this.tableLayoutPanel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tableLayoutPanel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.tableLayoutPanel14.ColumnCount = 3;
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -1300,58 +1395,66 @@
             this.tableLayoutPanel14.Controls.Add(this.Lbl_Enhancer01_Value, 1, 0);
             this.tableLayoutPanel14.Controls.Add(this.labelControl18, 0, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(528, 274);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(528, 276);
             this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 3;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(253, 132);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(253, 133);
             this.tableLayoutPanel14.TabIndex = 11;
             // 
             // Lbl_Enhancer03_Percentage
             // 
             this.Lbl_Enhancer03_Percentage.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.Lbl_Enhancer03_Percentage.Appearance.ForeColor = System.Drawing.Color.White;
             this.Lbl_Enhancer03_Percentage.Appearance.Options.UseFont = true;
+            this.Lbl_Enhancer03_Percentage.Appearance.Options.UseForeColor = true;
             this.Lbl_Enhancer03_Percentage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Lbl_Enhancer03_Percentage.Location = new System.Drawing.Point(172, 90);
             this.Lbl_Enhancer03_Percentage.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Lbl_Enhancer03_Percentage.Name = "Lbl_Enhancer03_Percentage";
             this.Lbl_Enhancer03_Percentage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Lbl_Enhancer03_Percentage.Size = new System.Drawing.Size(77, 40);
+            this.Lbl_Enhancer03_Percentage.Size = new System.Drawing.Size(77, 41);
             this.Lbl_Enhancer03_Percentage.TabIndex = 8;
             this.Lbl_Enhancer03_Percentage.Text = "0";
             // 
             // Lbl_Enhancer03_Value
             // 
             this.Lbl_Enhancer03_Value.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.Lbl_Enhancer03_Value.Appearance.ForeColor = System.Drawing.Color.White;
             this.Lbl_Enhancer03_Value.Appearance.Options.UseFont = true;
+            this.Lbl_Enhancer03_Value.Appearance.Options.UseForeColor = true;
             this.Lbl_Enhancer03_Value.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Lbl_Enhancer03_Value.Location = new System.Drawing.Point(88, 90);
             this.Lbl_Enhancer03_Value.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Lbl_Enhancer03_Value.Name = "Lbl_Enhancer03_Value";
             this.Lbl_Enhancer03_Value.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Lbl_Enhancer03_Value.Size = new System.Drawing.Size(76, 40);
+            this.Lbl_Enhancer03_Value.Size = new System.Drawing.Size(76, 41);
             this.Lbl_Enhancer03_Value.TabIndex = 7;
             this.Lbl_Enhancer03_Value.Text = "0";
             // 
             // labelControl25
             // 
             this.labelControl25.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl25.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl25.Appearance.Options.UseFont = true;
+            this.labelControl25.Appearance.Options.UseForeColor = true;
             this.labelControl25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl25.Location = new System.Drawing.Point(4, 90);
             this.labelControl25.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl25.Name = "labelControl25";
-            this.labelControl25.Size = new System.Drawing.Size(76, 40);
+            this.labelControl25.Size = new System.Drawing.Size(76, 41);
             this.labelControl25.TabIndex = 6;
             this.labelControl25.Text = "Enhancer 3";
             // 
             // Lbl_Enhancer02_Percentage
             // 
             this.Lbl_Enhancer02_Percentage.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.Lbl_Enhancer02_Percentage.Appearance.ForeColor = System.Drawing.Color.White;
             this.Lbl_Enhancer02_Percentage.Appearance.Options.UseFont = true;
+            this.Lbl_Enhancer02_Percentage.Appearance.Options.UseForeColor = true;
             this.Lbl_Enhancer02_Percentage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Lbl_Enhancer02_Percentage.Location = new System.Drawing.Point(172, 46);
             this.Lbl_Enhancer02_Percentage.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -1364,7 +1467,9 @@
             // Lbl_Enhancer02_Value
             // 
             this.Lbl_Enhancer02_Value.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.Lbl_Enhancer02_Value.Appearance.ForeColor = System.Drawing.Color.White;
             this.Lbl_Enhancer02_Value.Appearance.Options.UseFont = true;
+            this.Lbl_Enhancer02_Value.Appearance.Options.UseForeColor = true;
             this.Lbl_Enhancer02_Value.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Lbl_Enhancer02_Value.Location = new System.Drawing.Point(88, 46);
             this.Lbl_Enhancer02_Value.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -1377,7 +1482,9 @@
             // labelControl22
             // 
             this.labelControl22.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl22.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl22.Appearance.Options.UseFont = true;
+            this.labelControl22.Appearance.Options.UseForeColor = true;
             this.labelControl22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl22.Location = new System.Drawing.Point(4, 46);
             this.labelControl22.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -1389,7 +1496,9 @@
             // Lbl_Enhancer01_Percentage
             // 
             this.Lbl_Enhancer01_Percentage.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.Lbl_Enhancer01_Percentage.Appearance.ForeColor = System.Drawing.Color.White;
             this.Lbl_Enhancer01_Percentage.Appearance.Options.UseFont = true;
+            this.Lbl_Enhancer01_Percentage.Appearance.Options.UseForeColor = true;
             this.Lbl_Enhancer01_Percentage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Lbl_Enhancer01_Percentage.Location = new System.Drawing.Point(172, 2);
             this.Lbl_Enhancer01_Percentage.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -1402,7 +1511,9 @@
             // Lbl_Enhancer01_Value
             // 
             this.Lbl_Enhancer01_Value.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.Lbl_Enhancer01_Value.Appearance.ForeColor = System.Drawing.Color.White;
             this.Lbl_Enhancer01_Value.Appearance.Options.UseFont = true;
+            this.Lbl_Enhancer01_Value.Appearance.Options.UseForeColor = true;
             this.Lbl_Enhancer01_Value.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Lbl_Enhancer01_Value.Location = new System.Drawing.Point(88, 2);
             this.Lbl_Enhancer01_Value.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -1415,7 +1526,9 @@
             // labelControl18
             // 
             this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl18.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl18.Appearance.Options.UseFont = true;
+            this.labelControl18.Appearance.Options.UseForeColor = true;
             this.labelControl18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl18.Location = new System.Drawing.Point(4, 2);
             this.labelControl18.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -1430,7 +1543,7 @@
             this.btnStart.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F);
             this.btnStart.Appearance.Options.UseBackColor = true;
             this.btnStart.Appearance.Options.UseFont = true;
-            this.btnStart.Location = new System.Drawing.Point(1408, 14);
+            this.btnStart.Location = new System.Drawing.Point(1410, 12);
             this.btnStart.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(132, 27);
@@ -1442,14 +1555,14 @@
             // txtOutputFilePath
             // 
             this.txtOutputFilePath.EditValue = "";
-            this.txtOutputFilePath.Location = new System.Drawing.Point(837, 14);
+            this.txtOutputFilePath.Location = new System.Drawing.Point(835, 12);
             this.txtOutputFilePath.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtOutputFilePath.Name = "txtOutputFilePath";
             this.txtOutputFilePath.Properties.Appearance.BackColor = System.Drawing.Color.PapayaWhip;
             this.txtOutputFilePath.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOutputFilePath.Properties.Appearance.Options.UseBackColor = true;
             this.txtOutputFilePath.Properties.Appearance.Options.UseFont = true;
-            this.txtOutputFilePath.Size = new System.Drawing.Size(567, 32);
+            this.txtOutputFilePath.Size = new System.Drawing.Size(571, 32);
             this.txtOutputFilePath.StyleController = this.FrmReportDashboardlayoutControl1ConvertedLayout;
             this.txtOutputFilePath.TabIndex = 4;
             // 
@@ -1470,9 +1583,9 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.tableLayoutPanel1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(477, 36);
+            this.layoutControlItem4.Location = new System.Drawing.Point(478, 36);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(1053, 687);
+            this.layoutControlItem4.Size = new System.Drawing.Size(1056, 691);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -1481,7 +1594,7 @@
             this.layoutControlItem3.Control = this.gridControl1;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 36);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(477, 687);
+            this.layoutControlItem3.Size = new System.Drawing.Size(478, 691);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -1490,23 +1603,23 @@
             this.textEdit1item.Control = this.txtInputFilePath;
             this.textEdit1item.Location = new System.Drawing.Point(0, 0);
             this.textEdit1item.Name = "textEdit1item";
-            this.textEdit1item.Size = new System.Drawing.Size(742, 36);
+            this.textEdit1item.Size = new System.Drawing.Size(744, 36);
             this.textEdit1item.Text = "Input Path";
             this.textEdit1item.TextSize = new System.Drawing.Size(67, 16);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtOutputFilePath;
-            this.layoutControlItem1.Location = new System.Drawing.Point(742, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(744, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(652, 36);
+            this.layoutControlItem1.Size = new System.Drawing.Size(654, 36);
             this.layoutControlItem1.Text = "Output Path";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(67, 16);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnStart;
-            this.layoutControlItem2.Location = new System.Drawing.Point(1394, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(1398, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(136, 36);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -1516,56 +1629,6 @@
             // 
             this.fileWatcher.EnableRaisingEvents = true;
             this.fileWatcher.SynchronizingObject = this;
-            // 
-            // labelControl23
-            // 
-            this.labelControl23.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl23.Appearance.Options.UseFont = true;
-            this.labelControl23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl23.Location = new System.Drawing.Point(4, 68);
-            this.labelControl23.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(119, 29);
-            this.labelControl23.TabIndex = 3;
-            this.labelControl23.Text = "Sword Damage";
-            // 
-            // labelControl24
-            // 
-            this.labelControl24.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl24.Appearance.Options.UseFont = true;
-            this.labelControl24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl24.Location = new System.Drawing.Point(4, 101);
-            this.labelControl24.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.labelControl24.Name = "labelControl24";
-            this.labelControl24.Size = new System.Drawing.Size(119, 29);
-            this.labelControl24.TabIndex = 5;
-            this.labelControl24.Text = "Riffle Damage";
-            // 
-            // LblSwordDamage
-            // 
-            this.LblSwordDamage.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.LblSwordDamage.Appearance.Options.UseFont = true;
-            this.LblSwordDamage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LblSwordDamage.Location = new System.Drawing.Point(131, 68);
-            this.LblSwordDamage.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.LblSwordDamage.Name = "LblSwordDamage";
-            this.LblSwordDamage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.LblSwordDamage.Size = new System.Drawing.Size(119, 29);
-            this.LblSwordDamage.TabIndex = 3;
-            this.LblSwordDamage.Text = "0";
-            // 
-            // lblRfilleDamage
-            // 
-            this.lblRfilleDamage.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.lblRfilleDamage.Appearance.Options.UseFont = true;
-            this.lblRfilleDamage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblRfilleDamage.Location = new System.Drawing.Point(131, 101);
-            this.lblRfilleDamage.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.lblRfilleDamage.Name = "lblRfilleDamage";
-            this.lblRfilleDamage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.lblRfilleDamage.Size = new System.Drawing.Size(119, 29);
-            this.lblRfilleDamage.TabIndex = 3;
-            this.lblRfilleDamage.Text = "0";
             // 
             // FrmReportDashboard
             // 

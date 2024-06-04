@@ -13,6 +13,7 @@ using System.Data;
 using DevExpress.Utils.Html.Internal;
 using System.Runtime.InteropServices;
 using static System.Net.Mime.MediaTypeNames;
+using DevExpress.XtraPrinting.Native;
 
 namespace Entropia
 {
@@ -77,7 +78,9 @@ namespace Entropia
 
         #region KeyLogger for Swords and Riffle
 
-        private static string userInput = "";
+        private static List<DateTime> Damage_Time = new List<DateTime>();
+        private static string userInput = "Sword"; // Default value
+
 
         // Import the necessary Windows API functions
         [DllImport("user32.dll")]
@@ -107,9 +110,9 @@ namespace Entropia
 
         private async void FrmReportDashboard_Load(object sender, EventArgs e)
         {
-
+            int num = new Random().Next(1000, 9999);
             txtInputFilePath.Text = "C:\\Users\\Salman Naveed\\Downloads\\Entropia\\chat.log";
-            txtOutputFilePath.Text = "C:\\Users\\Salman Naveed\\Downloads\\Entropia\\" + DateTime.Now.ToString();
+            txtOutputFilePath.Text = "C:\\Users\\Salman Naveed\\Downloads\\Entropia\\" +num;
 
             CostOfAttack.Columns.Add("Description");
             CostOfAttack.Columns.Add("Value");
@@ -512,10 +515,17 @@ namespace Entropia
 
             }
 
+
             if (Criticaldamage_inflicted.IsMatch(line))
             {
-                WriteToFile(line+" - " + userInput);
-
+                WriteToFile(line + " - " + userInput);
+                DateTime damageTime = ExtractDamageTime(line);
+                
+                if (damageTime != DateTime.MinValue)
+                {
+                    Damage_Time.Add(damageTime);
+                    Console.WriteLine(damageTime);
+                }
                 var match = DamageRegex.Match(line);
                 if (match.Success)
                 {
@@ -524,38 +534,36 @@ namespace Entropia
                     {
                         CriticalDamageInflictedValues.Add(DamageValue);
 
-                        if (userInput=="Sword")
+                        if (Damage_Time.Count >= 2)
                         {
-                            SwordDamageCount += 1;
-                            SwordDamageSum += DamageValue;
+                            DateTime lastDateTime = Damage_Time[Damage_Time.Count - 2];
+                            DateTime currentDateTime = Damage_Time[Damage_Time.Count - 1];
+
+                            TimeSpan timeDifference = currentDateTime - lastDateTime;
+                           
+                            double secondsDifference = timeDifference.TotalSeconds;
+                            Console.WriteLine(secondsDifference);
+
+                            if (secondsDifference>=2 && userInput == "Sword")
+                            {
+                                SwordDamageCount += 1;
+                                SwordDamageSum += DamageValue;
+                            }
+                            else if (secondsDifference<2 && userInput == "Sword")
+                            {
+                                RiffleDamageCount += 1;
+                                RiffleDamageSum += DamageValue;
+                            }
+                            else if (userInput == "Riffle")
+                            {
+                                RiffleDamageCount += 1;
+                                RiffleDamageSum += DamageValue;
+                            }
                         }
-                        else if (userInput=="Riffle")
-                        {
-                            RiffleDamageCount += 1;
-                            RiffleDamageSum += DamageValue;
-                        }
-                        else
-                        {
-                            //
-                        }
+                       
                     }
-                }
-
-            }
-
-            if (Simpledamage_inflicted.IsMatch(line))
-            {
-                WriteToFile(line);
-
-                var match = DamageRegex.Match(line);
-                if (match.Success)
-                {
-                    //XtraMessageBox.Show("asndjaskdhaskjdas");
-                    if (double.TryParse(match.Groups[1].Value, out double DamageValue))
+                    else if (Damage_Time.Count == 1 && userInput != "")
                     {
-                        SimpleDamageInflictedValues.Add(DamageValue);
-
-
                         if (userInput == "Sword")
                         {
                             SwordDamageCount += 1;
@@ -566,9 +574,69 @@ namespace Entropia
                             RiffleDamageCount += 1;
                             RiffleDamageSum += DamageValue;
                         }
-                        else
+                    }
+                }
+
+            }
+
+            if (Simpledamage_inflicted.IsMatch(line))
+            {
+               
+                WriteToFile(line);
+                DateTime damageTime = ExtractDamageTime(line);
+
+                if (damageTime != DateTime.MinValue)
+                {
+                    Damage_Time.Add(damageTime);
+                    Console.WriteLine(damageTime);
+                }
+                var match = DamageRegex.Match(line);
+                if (match.Success)
+                {
+                    //XtraMessageBox.Show("asndjaskdhaskjdas");
+                    if (double.TryParse(match.Groups[1].Value, out double DamageValue))
+                    {
+                        SimpleDamageInflictedValues.Add(DamageValue);
+
+
+                        if (Damage_Time.Count >= 2)
                         {
-                            //
+                            DateTime lastDateTime = Damage_Time[Damage_Time.Count - 2];
+                            DateTime currentDateTime = Damage_Time[Damage_Time.Count - 1];
+
+                            TimeSpan timeDifference = currentDateTime - lastDateTime;
+
+                            double secondsDifference = timeDifference.TotalSeconds;
+                            Console.WriteLine(secondsDifference);
+                            
+                            if (secondsDifference >= 2 && userInput == "Sword")
+                            {
+                                SwordDamageCount += 1;
+                                SwordDamageSum += DamageValue;
+                            }
+                            else if (secondsDifference < 2 && userInput == "Sword")
+                            {
+                                RiffleDamageCount += 1;
+                                RiffleDamageSum += DamageValue;
+                            }
+                            else if (userInput == "Riffle")
+                            {
+                                RiffleDamageCount += 1;
+                                RiffleDamageSum += DamageValue;
+                            }
+                        }
+                        else if (Damage_Time.Count == 1 && userInput != "")
+                        {
+                            if (userInput == "Sword")
+                            {
+                                SwordDamageCount += 1;
+                                SwordDamageSum += DamageValue;
+                            }
+                            else if (userInput == "Riffle")
+                            {
+                                RiffleDamageCount += 1;
+                                RiffleDamageSum += DamageValue;
+                            }
                         }
                     }
                 }
@@ -579,42 +647,106 @@ namespace Entropia
             if (TargetEvadedYourAttack_Regex.IsMatch(line))
             {
                 WriteToFile(line);
+                DateTime damageTime = ExtractDamageTime(line);
+
+                if (damageTime != DateTime.MinValue)
+                {
+                    Damage_Time.Add(damageTime);
+                    Console.WriteLine(damageTime);
+                }
                 TargetEvadedYourAttack_List.Add(line);
 
-                if (userInput == "Sword")
+                if (Damage_Time.Count >= 2)
                 {
-                    SwordDamageCount += 1;
-                  //  SwordDamageSum += DamageValue;
+                    DateTime lastDateTime = Damage_Time[Damage_Time.Count - 2];
+                    DateTime currentDateTime = Damage_Time[Damage_Time.Count - 1];
+
+                    TimeSpan timeDifference = currentDateTime - lastDateTime;
+
+                    double secondsDifference = timeDifference.TotalSeconds;
+                    Console.WriteLine(secondsDifference);
+
+                    if (secondsDifference >= 2 && userInput == "Sword")
+                    {
+                        SwordDamageCount += 1;
+                       // SwordDamageSum += DamageValue;
+                    }
+                    else if (secondsDifference < 2 && userInput == "Sword")
+                    {
+                        RiffleDamageCount += 1;
+                       /// RiffleDamageSum += DamageValue;
+                    }
+                    else if (userInput == "Riffle")
+                    {
+                        RiffleDamageCount += 1;
+                        //RiffleDamageSum += DamageValue;
+                    }
                 }
-                else if (userInput == "Riffle")
+                else if (Damage_Time.Count == 1 && userInput != "")
                 {
-                    RiffleDamageCount += 1;
-                   // RiffleDamageSum += DamageValue;
-                }
-                else
-                {
-                    //
+                    if (userInput == "Sword")
+                    {
+                        SwordDamageCount += 1;
+                       
+                    }
+                    else if (userInput == "Riffle")
+                    {
+                        RiffleDamageCount += 1;
+                     
+                    }
                 }
             }
 
             if (TargetDodgedYourAttack_Regex.IsMatch(line))
             {
                 WriteToFile(line);
+                DateTime damageTime = ExtractDamageTime(line);
+
+                if (damageTime != DateTime.MinValue)
+                {
+                    Damage_Time.Add(damageTime);
+                    Console.WriteLine(damageTime);
+                }
                 TargetDodgedYourAttack_List.Add(line);
 
-                if (userInput == "Sword")
+                if (Damage_Time.Count >= 2)
                 {
-                    SwordDamageCount += 1;
-                    //  SwordDamageSum += DamageValue;
+                    DateTime lastDateTime = Damage_Time[Damage_Time.Count - 2];
+                    DateTime currentDateTime = Damage_Time[Damage_Time.Count - 1];
+
+                    TimeSpan timeDifference = currentDateTime - lastDateTime;
+
+                    double secondsDifference = timeDifference.TotalSeconds;
+                    Console.WriteLine(secondsDifference);
+
+                    if (secondsDifference >= 2 && userInput == "Sword")
+                    {
+                        SwordDamageCount += 1;
+                        // SwordDamageSum += DamageValue;
+                    }
+                    else if (secondsDifference < 2 && userInput == "Sword")
+                    {
+                        RiffleDamageCount += 1;
+                        /// RiffleDamageSum += DamageValue;
+                    }
+                    else if (userInput == "Riffle")
+                    {
+                        RiffleDamageCount += 1;
+                        //RiffleDamageSum += DamageValue;
+                    }
                 }
-                else if (userInput == "Riffle")
+                else if (Damage_Time.Count == 1 && userInput != "")
                 {
-                    RiffleDamageCount += 1;
-                    // RiffleDamageSum += DamageValue;
-                }
-                else
-                {
-                    //
+                    if (userInput == "Sword")
+                    {
+                        SwordDamageCount += 1;
+                        //SwordDamageSum += DamageValue;
+                    }
+                    else if (userInput == "Riffle")
+                    {
+                        RiffleDamageCount += 1;
+                       // RiffleDamageSum += DamageValue;
+                    }
                 }
 
             }
@@ -690,6 +822,26 @@ namespace Entropia
 
             #endregion
         }
+
+
+
+        public DateTime ExtractDamageTime(string line)
+        {
+            DateTime damageTime = DateTime.MinValue;
+            string dateTimePart = line.Substring(0, 19); // Assuming the timestamp format is "yyyy-MM-dd HH:mm:ss"
+            if (DateTime.TryParseExact(dateTimePart, "yyyy-MM-dd HH:mm:ss", null, System.Globalization.DateTimeStyles.None, out damageTime))
+            {
+                return damageTime;
+            }
+            else
+            {
+                // Handle invalid date format
+                Console.WriteLine("Invalid date format in line: " + line);
+                return damageTime; // Will be DateTime.MinValue
+            }
+        }
+
+
         private void AddOrUpdateRow(DataTable table, string item, double value)
         {
             var row = table.Rows.Cast<DataRow>().FirstOrDefault(r => r["Item"].ToString() == item);
@@ -1040,19 +1192,19 @@ namespace Entropia
             }
             if (lblRfilleDamage.InvokeRequired)
             {
-                lblRfilleDamage.Invoke(new Action(() => lblRfilleDamage.Text = RiffleDamageSum.ToString()));
+                lblRfilleDamage.Invoke(new Action(() => lblRfilleDamage.Text =Math.Round(RiffleDamageSum,2).ToString()));
             }
             else
             {
-                lblRfilleDamage.Text = RiffleDamageSum.ToString();
+                lblRfilleDamage.Text = Math.Round(RiffleDamageSum, 2).ToString();
             }
             if (LblSwordDamage.InvokeRequired)
             {
-                LblSwordDamage.Invoke(new Action(() => LblSwordDamage.Text = SwordDamageSum.ToString()));
+                LblSwordDamage.Invoke(new Action(() => LblSwordDamage.Text =Math.Round(SwordDamageSum,2).ToString()));
             }
             else
             {
-                LblSwordDamage.Text = SwordDamageSum.ToString();
+                LblSwordDamage.Text =Math.Round(SwordDamageSum,2).ToString();
             }
             //#endregion
         }
@@ -1166,18 +1318,21 @@ namespace Entropia
                 int vkCode = Marshal.ReadInt32(lParam);
                 // Convert the virtual key code to a character
                 char keyChar = (char)vkCode;
-              
-               // userInput += keyChar;
 
-                // Check if '1' or '2' is pressed and set the string accordingly
+                // userInput += keyChar;
+
                 if (keyChar == '1')
                 {
                     userInput = "Riffle";
+                   
                 }
                 else if (keyChar == '2')
                 {
                     userInput = "Sword";
                 }
+
+
+
 
                 Console.WriteLine(userInput);
             }
@@ -1187,13 +1342,6 @@ namespace Entropia
 
 
         #endregion
-
-
-
-
-
-
-
 
 
     }
