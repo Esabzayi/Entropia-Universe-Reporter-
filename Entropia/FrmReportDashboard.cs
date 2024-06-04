@@ -10,11 +10,18 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Runtime.CompilerServices;
 using System.Data;
+using DevExpress.Utils.Html.Internal;
+using System.Runtime.InteropServices;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Entropia
 {
     public partial class FrmReportDashboard : DevExpress.XtraEditors.XtraForm
     {
+        double SwordDamageSum = 0;
+        double SwordDamageCount = 0;
+        double RiffleDamageSum = 0;
+        double RiffleDamageCount = 0;
         DataTable CostOfAttack = new DataTable();
         private string inputFilePath;
         private string outputFile;
@@ -48,6 +55,11 @@ namespace Entropia
 
         #endregion
 
+
+        #region You Received 
+        private readonly Regex YouReceived_Regex = new Regex(@"\[System\] \[\] You received (.+?) x \(\d+\) Value: ([\d.]+) PED");
+        DataTable YouReceived_List = new DataTable();
+        #endregion
         private long lastReadPosition = 0;
         private List<double> pedValues = new List<double>();
 
@@ -61,7 +73,32 @@ namespace Entropia
         private System.Threading.Timer debounceTimer;
         private readonly int debounceTime = 500; // milliseconds
         private readonly object fileLock = new object();
-        private  FileSystemWatcher f;
+        private FileSystemWatcher f;
+
+        #region KeyLogger for Swords and Riffle
+
+        private static string userInput = "";
+
+        // Import the necessary Windows API functions
+        [DllImport("user32.dll")]
+        private static extern IntPtr SetWindowsHookEx(int idHook, LowLevelKeyboardProc lpfn, IntPtr hMod, uint dwThreadId);
+
+        [DllImport("user32.dll")]
+        private static extern bool UnhookWindowsHookEx(IntPtr hhk);
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr CallNextHookEx(IntPtr hhk, int nCode, IntPtr wParam, IntPtr lParam);
+
+        [DllImport("kernel32.dll")]
+        private static extern IntPtr GetModuleHandle(string lpModuleName);
+
+        private delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
+
+        private const int WH_KEYBOARD_LL = 13;
+        private const int WM_KEYDOWN = 0x0100;
+        private static LowLevelKeyboardProc _proc = HookCallback;
+        private static IntPtr _hookID = IntPtr.Zero;
+        #endregion
 
         public FrmReportDashboard()
         {
@@ -70,12 +107,13 @@ namespace Entropia
 
         private async void FrmReportDashboard_Load(object sender, EventArgs e)
         {
+
             txtInputFilePath.Text = "C:\\Users\\Salman Naveed\\Downloads\\Entropia\\chat.log";
             txtOutputFilePath.Text = "C:\\Users\\Salman Naveed\\Downloads\\Entropia\\" + DateTime.Now.ToString();
 
             CostOfAttack.Columns.Add("Description");
             CostOfAttack.Columns.Add("Value");
-            CostOfAttack.Rows.Add("Weapon + Amplifier + Metric + T4",60.5904);
+            CostOfAttack.Rows.Add("Weapon + Amplifier + Metric + T4", 60.5904);
             CostOfAttack.Rows.Add("Weapon + Amplifier + Metric + T0", 47.8560);
             CostOfAttack.Rows.Add("Weapon + Amplifier + T4", 60.5704);
             CostOfAttack.Rows.Add("Weapon + Amplifier + T0", 47.8360);
@@ -83,6 +121,18 @@ namespace Entropia
             txtCostofAttacks.Properties.ValueMember = "Value";
             txtCostofAttacks.Properties.DisplayMember = "Value";
             txtCostofAttacks.EditValue = 60.5904;
+
+            YouReceived_List.Columns.Add("Item");
+            YouReceived_List.Columns.Add("Value", Type.GetType("System.Double"));
+            YouReceived_List.Columns.Add("Count", Type.GetType("System.Int32"));
+           
+
+            gridControl1.DataSource = YouReceived_List;
+
+            Console.WriteLine("Keylogger is running. Press '1' for Sword and '2' for Riffle.");
+
+            _hookID = SetHook(_proc);
+           
         }
 
 
@@ -368,16 +418,51 @@ namespace Entropia
                 }
 
                 #endregion
-                if (lblTotalCostPed.InvokeRequired)
+
+                if (gridControl1.InvokeRequired)
                 {
-                    lblTotalCostPed.Invoke(new Action(() => CalculateAndDisplayResults()));
+                    gridControl1.Invoke(new Action(() => CalculateAndDisplayResults()));
                 }
                 else
                 {
                     CalculateAndDisplayResults();
                 }
 
+                if (lblswordcount.InvokeRequired)
+                {
+                    lblswordcount.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
 
+                if (LblRiffleCount.InvokeRequired)
+                {
+                    LblRiffleCount.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+                if (lblRfilleDamage.InvokeRequired)
+                {
+                    lblRfilleDamage.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+                if (LblSwordDamage.InvokeRequired)
+                {
+                    LblSwordDamage.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
                 await ReadFileAsync();
             }, null, debounceTime, Timeout.Infinite);
         }
@@ -389,11 +474,11 @@ namespace Entropia
             if (shrapnelRegex.IsMatch(line))
             {
                 //[System][] You received Shrapnel
-                 
+
                 WriteToFile(line);
 
                 var match = pedRegex.Match(line);
-               
+
                 if (match.Success)
                 {
                     if (double.TryParse(match.Groups[1].Value, out double pedValue))
@@ -424,12 +509,12 @@ namespace Entropia
                         AmplifierValues.Add(AmpValue);
                     }
                 }
-               
+
             }
 
             if (Criticaldamage_inflicted.IsMatch(line))
             {
-                WriteToFile(line);
+                WriteToFile(line+" - " + userInput);
 
                 var match = DamageRegex.Match(line);
                 if (match.Success)
@@ -438,6 +523,21 @@ namespace Entropia
                     if (double.TryParse(match.Groups[1].Value, out double DamageValue))
                     {
                         CriticalDamageInflictedValues.Add(DamageValue);
+
+                        if (userInput=="Sword")
+                        {
+                            SwordDamageCount += 1;
+                            SwordDamageSum += DamageValue;
+                        }
+                        else if (userInput=="Riffle")
+                        {
+                            RiffleDamageCount += 1;
+                            RiffleDamageSum += DamageValue;
+                        }
+                        else
+                        {
+                            //
+                        }
                     }
                 }
 
@@ -454,6 +554,22 @@ namespace Entropia
                     if (double.TryParse(match.Groups[1].Value, out double DamageValue))
                     {
                         SimpleDamageInflictedValues.Add(DamageValue);
+
+
+                        if (userInput == "Sword")
+                        {
+                            SwordDamageCount += 1;
+                            SwordDamageSum += DamageValue;
+                        }
+                        else if (userInput == "Riffle")
+                        {
+                            RiffleDamageCount += 1;
+                            RiffleDamageSum += DamageValue;
+                        }
+                        else
+                        {
+                            //
+                        }
                     }
                 }
 
@@ -465,12 +581,41 @@ namespace Entropia
                 WriteToFile(line);
                 TargetEvadedYourAttack_List.Add(line);
 
+                if (userInput == "Sword")
+                {
+                    SwordDamageCount += 1;
+                  //  SwordDamageSum += DamageValue;
+                }
+                else if (userInput == "Riffle")
+                {
+                    RiffleDamageCount += 1;
+                   // RiffleDamageSum += DamageValue;
+                }
+                else
+                {
+                    //
+                }
             }
 
             if (TargetDodgedYourAttack_Regex.IsMatch(line))
             {
                 WriteToFile(line);
                 TargetDodgedYourAttack_List.Add(line);
+
+                if (userInput == "Sword")
+                {
+                    SwordDamageCount += 1;
+                    //  SwordDamageSum += DamageValue;
+                }
+                else if (userInput == "Riffle")
+                {
+                    RiffleDamageCount += 1;
+                    // RiffleDamageSum += DamageValue;
+                }
+                else
+                {
+                    //
+                }
 
             }
 
@@ -513,8 +658,51 @@ namespace Entropia
                 Enhancer06_List.Add(line);
             }
             #endregion
-        }
 
+            #region You Received
+
+            var match_YouReceived = YouReceived_Regex.Match(line);
+            if (match_YouReceived.Success)
+            {
+                WriteToFile(line);
+
+                string item = match_YouReceived.Groups[1].Value;
+                double value = double.Parse(match_YouReceived.Groups[2].Value);
+                if (item == "Universal Ammo") 
+                { } else
+                {
+                    if (gridControl1.InvokeRequired)
+                    {
+                        gridControl1.BeginInvoke(new Action(() => {
+                            AddOrUpdateRow(YouReceived_List, item, value);
+                        }));
+                    }
+                    else
+                    {
+                        AddOrUpdateRow(YouReceived_List, item, value);
+                    }
+                }
+               
+
+
+
+            }
+
+            #endregion
+        }
+        private void AddOrUpdateRow(DataTable table, string item, double value)
+        {
+            var row = table.Rows.Cast<DataRow>().FirstOrDefault(r => r["Item"].ToString() == item);
+            if (row != null)
+            {
+                row["Value"] = (double)row["Value"] + value;
+                row["Count"] = (int)row["Count"] + 1; 
+            }
+            else
+            {
+                table.Rows.Add(item, value, 1); 
+            }
+        }
         private void WriteToFile(string line)
         {
             try
@@ -677,7 +865,7 @@ namespace Entropia
 
             if (lblTotalCost.InvokeRequired)
             {
-                lblTotalCost.Invoke(new Action(() => lblTotalCost.Text = Math.Round(TotalNumberOfAttacks * CostPerAttack,4).ToString()));
+                lblTotalCost.Invoke(new Action(() => lblTotalCost.Text = Math.Round(TotalNumberOfAttacks * CostPerAttack, 4).ToString()));
             }
             else
             {
@@ -724,7 +912,7 @@ namespace Entropia
             }
             if (Lbl_Enhancer01_Percentage.InvokeRequired)
             {
-                Lbl_Enhancer01_Percentage.Invoke(new Action(() => Lbl_Enhancer01_Percentage.Text = Math.Round((Enhancer01_Count / TotalEnhancer)*100,4).ToString() + " %"));
+                Lbl_Enhancer01_Percentage.Invoke(new Action(() => Lbl_Enhancer01_Percentage.Text = Math.Round((Enhancer01_Count / TotalEnhancer) * 100, 4).ToString() + " %"));
             }
             else
             {
@@ -817,7 +1005,58 @@ namespace Entropia
                 Lbl_Enhancer06_Percentage.Text = Math.Round((Enhancer06_Count / TotalEnhancer) * 100, 4).ToString() + " %";
             }
             #endregion
+
+            //#region Grid Update You Received
+            if (gridControl1.InvokeRequired)
+            {
+                gridControl1.BeginInvoke(new Action(() => {
+                    //gridControl1.DataSource = null;
+                    gridControl1.DataSource = YouReceived_List;
+                    gridControl1.RefreshDataSource();
+                }));
+            }
+            else
+            {
+               // gridControl1.DataSource = null;
+                gridControl1.DataSource = YouReceived_List;
+                gridControl1.RefreshDataSource();
+            }
+
+            if (lblswordcount.InvokeRequired)
+            {
+                lblswordcount.Invoke(new Action(() => lblswordcount.Text = SwordDamageCount.ToString()));
+            }
+            else
+            {
+                lblswordcount.Text = SwordDamageCount.ToString();
+            }
+            if (LblRiffleCount.InvokeRequired)
+            {
+                LblRiffleCount.Invoke(new Action(() => LblRiffleCount.Text = RiffleDamageCount.ToString()));
+            }
+            else
+            {
+                LblRiffleCount.Text = RiffleDamageCount.ToString();
+            }
+            if (lblRfilleDamage.InvokeRequired)
+            {
+                lblRfilleDamage.Invoke(new Action(() => lblRfilleDamage.Text = RiffleDamageSum.ToString()));
+            }
+            else
+            {
+                lblRfilleDamage.Text = RiffleDamageSum.ToString();
+            }
+            if (LblSwordDamage.InvokeRequired)
+            {
+                LblSwordDamage.Invoke(new Action(() => LblSwordDamage.Text = SwordDamageSum.ToString()));
+            }
+            else
+            {
+                LblSwordDamage.Text = SwordDamageSum.ToString();
+            }
+            //#endregion
         }
+
 
         private int CountEntries()
         {
@@ -839,40 +1078,14 @@ namespace Entropia
             return count;
         }
 
-        //private async void btnStart_Click(object sender, EventArgs e)
-        //{
-        //    inputFilePath = txtInputFilePath.Text;
-        //    outputFile = txtOutputFilePath.Text;
-
-        //    // Clear the output file if it exists
-        //    if (File.Exists(outputFile))
-        //    {
-        //        lock (fileLock)
-        //        {
-        //            File.WriteAllText(outputFile, string.Empty);
-        //        }
-        //    }
-
-        //    await ReadFileAsync();
-
-
-        //    //lblmwssage.Text = "admasldka";
-        //    using (var fileWatcher = new FileSystemWatcher(Path.GetDirectoryName(inputFilePath)))
-        //    {
-        //        fileWatcher.Filter = Path.GetFileName(inputFilePath);
-        //        fileWatcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.Size;
-        //        fileWatcher.Changed += async (source, x) => await OnFileChanged(source, x);
-        //        fileWatcher.EnableRaisingEvents = true;
-
-        //        //MessageBox.Show("Monitoring file for changes. Press 'Stop' to quit.");
-        //    }
-
-
-        //}
-        
 
         private async void btnStart_Click(object sender, EventArgs e)
         {
+            SwordDamageCount = 0;
+            SwordDamageSum = 0;
+            RiffleDamageCount = 0;
+            RiffleDamageSum = 0; 
+
             inputFilePath = txtInputFilePath.Text;
             outputFile = txtOutputFilePath.Text;
 
@@ -896,7 +1109,7 @@ namespace Entropia
             };
             fileWatcher.EnableRaisingEvents = true;
 
-           
+
         }
 
 
@@ -922,16 +1135,68 @@ namespace Entropia
 
             lblTotalCost.Text = Math.Round(CostPerPec, 4).ToString();
 
-            lblTotalCostPed.Text = Math.Round(CostPerPec/100, 4).ToString();
+            lblTotalCostPed.Text = Math.Round(CostPerPec / 100, 4).ToString();
 
-           
+
             double SimpleHitSum = 0;
             double CriticalHitSum = 0;
             double.TryParse(LblHitDamageSum.Text, out SimpleHitSum);
             double.TryParse(lblTotalInflictedDamage.Text, out SimpleHitSum);
-            double TotalInflictedDamage = SimpleHitSum+CriticalHitSum;
+            double TotalInflictedDamage = SimpleHitSum + CriticalHitSum;
 
-            lblDamagePerPec.Text = Math.Round(TotalInflictedDamage/CostPerPec, 4).ToString();
+            lblDamagePerPec.Text = Math.Round(TotalInflictedDamage / CostPerPec, 4).ToString();
         }
+
+        #region Keylogger Logic
+
+
+        private static IntPtr SetHook(LowLevelKeyboardProc proc)
+        {
+            using (var curProcess = System.Diagnostics.Process.GetCurrentProcess())
+            using (var curModule = curProcess.MainModule)
+            {
+                return SetWindowsHookEx(WH_KEYBOARD_LL, proc, GetModuleHandle(curModule.ModuleName), 0);
+            }
+        }
+
+        private static IntPtr HookCallback(int nCode, IntPtr wParam, IntPtr lParam)
+        {
+            if (nCode >= 0 && wParam == (IntPtr)WM_KEYDOWN)
+            {
+                int vkCode = Marshal.ReadInt32(lParam);
+                // Convert the virtual key code to a character
+                char keyChar = (char)vkCode;
+              
+               // userInput += keyChar;
+
+                // Check if '1' or '2' is pressed and set the string accordingly
+                if (keyChar == '1')
+                {
+                    userInput = "Riffle";
+                }
+                else if (keyChar == '2')
+                {
+                    userInput = "Sword";
+                }
+
+                Console.WriteLine(userInput);
+            }
+
+            return CallNextHookEx(_hookID, nCode, wParam, lParam);
+        }
+
+
+        #endregion
+
+
+
+
+
+
+
+
+
     }
+
 }
+
