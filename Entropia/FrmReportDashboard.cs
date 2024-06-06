@@ -61,6 +61,8 @@ namespace Entropia
         private readonly Regex YouReceived_Regex = new Regex(@"\[System\] \[\] You received (.+?) x \(\d+\) Value: ([\d.]+) PED");
         DataTable YouReceived_List = new DataTable();
         #endregion
+
+
         private long lastReadPosition = 0;
         private List<double> pedValues = new List<double>();
 
