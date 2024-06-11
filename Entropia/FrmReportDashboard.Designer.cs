@@ -48,11 +48,6 @@
             this.Lbl_Enhancer05_Percentage = new DevExpress.XtraEditors.LabelControl();
             this.Lbl_Enhancer04_Value = new DevExpress.XtraEditors.LabelControl();
             this.Lbl_Enhancer04_Percentage = new DevExpress.XtraEditors.LabelControl();
-            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.lblHitCPercentage = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.lblHitPercentage = new DevExpress.XtraEditors.LabelControl();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblLot = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -75,8 +70,6 @@
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.lblDamageInflicted = new DevExpress.XtraEditors.LabelControl();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTotalInflictedDamage = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -94,18 +87,18 @@
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.LblNumberOfAttacks = new DevExpress.XtraEditors.LabelControl();
-            this.txtCostofAttacks = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.txtCostofAttacksPrimary = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.lblTotalCost = new DevExpress.XtraEditors.LabelControl();
+            this.lblTotalCostPerPecPrimary = new DevExpress.XtraEditors.LabelControl();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.lblDamagePerPec = new DevExpress.XtraEditors.LabelControl();
+            this.lblDamagePerPecPrimary = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.lblTotalCostPed = new DevExpress.XtraEditors.LabelControl();
+            this.lblTotalCostPedPrimary = new DevExpress.XtraEditors.LabelControl();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.Lbl_Enhancer03_Percentage = new DevExpress.XtraEditors.LabelControl();
             this.Lbl_Enhancer03_Value = new DevExpress.XtraEditors.LabelControl();
@@ -116,6 +109,40 @@
             this.Lbl_Enhancer01_Percentage = new DevExpress.XtraEditors.LabelControl();
             this.Lbl_Enhancer01_Value = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.lblHitCPercentage = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.lblHitPercentage = new DevExpress.XtraEditors.LabelControl();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.txtCostofAttacksSecondary = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
+            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
+            this.lblTotalCostPerPecSecondary = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
+            this.lblDamagePerPecSecondary = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl35 = new DevExpress.XtraEditors.LabelControl();
+            this.lblTotalCostPedSecondary = new DevExpress.XtraEditors.LabelControl();
+            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
+            this.lblTxtTotalValue = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl37 = new DevExpress.XtraEditors.LabelControl();
+            this.lblEnchancerBreakCount = new DevExpress.XtraEditors.LabelControl();
+            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTTCost = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl36 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl39 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl40 = new DevExpress.XtraEditors.LabelControl();
+            this.LblTotalCost = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl42 = new DevExpress.XtraEditors.LabelControl();
+            this.txtArmorDecay = new DevExpress.XtraEditors.CalcEdit();
+            this.txtHealing = new DevExpress.XtraEditors.CalcEdit();
             this.btnStart = new DevExpress.XtraEditors.SimpleButton();
             this.txtOutputFilePath = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -133,21 +160,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
-            this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCostofAttacks.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCostofAttacksPrimary.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCostofAttacksSecondary.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            this.tableLayoutPanel17.SuspendLayout();
+            this.tableLayoutPanel18.SuspendLayout();
+            this.tableLayoutPanel19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtArmorDecay.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHealing.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOutputFilePath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
@@ -243,6 +278,7 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
             this.gridView1.OptionsView.EnableAppearanceOddRow = true;
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.PaintStyleName = "Web";
             // 
@@ -294,18 +330,21 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.88243F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.13895F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel15, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel10, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel7, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel8, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel9, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel11, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel13, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel14, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel10, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel17, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel18, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel19, 3, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(490, 48);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -478,87 +517,6 @@
             this.Lbl_Enhancer04_Percentage.Size = new System.Drawing.Size(79, 40);
             this.Lbl_Enhancer04_Percentage.TabIndex = 11;
             this.Lbl_Enhancer04_Percentage.Text = "0";
-            // 
-            // tableLayoutPanel10
-            // 
-            this.tableLayoutPanel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tableLayoutPanel10.ColumnCount = 2;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Controls.Add(this.labelControl9, 0, 1);
-            this.tableLayoutPanel10.Controls.Add(this.lblHitCPercentage, 0, 1);
-            this.tableLayoutPanel10.Controls.Add(this.labelControl12, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.lblHitPercentage, 1, 0);
-            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(4, 413);
-            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 2;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(254, 133);
-            this.tableLayoutPanel10.TabIndex = 8;
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Appearance.Options.UseForeColor = true;
-            this.labelControl9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl9.Location = new System.Drawing.Point(4, 68);
-            this.labelControl9.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.labelControl9.Size = new System.Drawing.Size(119, 63);
-            this.labelControl9.TabIndex = 5;
-            this.labelControl9.Text = "C. Hit %";
-            // 
-            // lblHitCPercentage
-            // 
-            this.lblHitCPercentage.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.lblHitCPercentage.Appearance.ForeColor = System.Drawing.Color.White;
-            this.lblHitCPercentage.Appearance.Options.UseFont = true;
-            this.lblHitCPercentage.Appearance.Options.UseForeColor = true;
-            this.lblHitCPercentage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblHitCPercentage.Location = new System.Drawing.Point(131, 68);
-            this.lblHitCPercentage.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.lblHitCPercentage.Name = "lblHitCPercentage";
-            this.lblHitCPercentage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.lblHitCPercentage.Size = new System.Drawing.Size(119, 63);
-            this.lblHitCPercentage.TabIndex = 4;
-            this.lblHitCPercentage.Text = "%";
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl12.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Appearance.Options.UseForeColor = true;
-            this.labelControl12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl12.Location = new System.Drawing.Point(4, 2);
-            this.labelControl12.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.labelControl12.Size = new System.Drawing.Size(119, 62);
-            this.labelControl12.TabIndex = 3;
-            this.labelControl12.Text = "Hit %";
-            // 
-            // lblHitPercentage
-            // 
-            this.lblHitPercentage.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.lblHitPercentage.Appearance.ForeColor = System.Drawing.Color.White;
-            this.lblHitPercentage.Appearance.Options.UseFont = true;
-            this.lblHitPercentage.Appearance.Options.UseForeColor = true;
-            this.lblHitPercentage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblHitPercentage.Location = new System.Drawing.Point(131, 2);
-            this.lblHitPercentage.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.lblHitPercentage.Name = "lblHitPercentage";
-            this.lblHitPercentage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.lblHitPercentage.Size = new System.Drawing.Size(119, 62);
-            this.lblHitPercentage.TabIndex = 6;
-            this.lblHitPercentage.Text = "%";
             // 
             // tableLayoutPanel2
             // 
@@ -907,37 +865,6 @@
             this.lblDamageInflicted.TabIndex = 3;
             this.lblDamageInflicted.Text = "0";
             // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Controls.Add(this.labelControl5, 0, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 139);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(254, 133);
-            this.tableLayoutPanel6.TabIndex = 4;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Appearance.Options.UseForeColor = true;
-            this.labelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl5.Location = new System.Drawing.Point(4, 2);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(246, 62);
-            this.labelControl5.TabIndex = 3;
-            this.labelControl5.Text = "NA";
-            // 
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(110)))), ((int)(((byte)(86)))));
@@ -1149,11 +1076,11 @@
             // 
             // tableLayoutPanel11
             // 
-            this.tableLayoutPanel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(124)))), ((int)(((byte)(124)))));
+            this.tableLayoutPanel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.tableLayoutPanel11.ColumnCount = 1;
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel12, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.txtCostofAttacks, 0, 2);
+            this.tableLayoutPanel11.Controls.Add(this.txtCostofAttacksPrimary, 0, 2);
             this.tableLayoutPanel11.Controls.Add(this.labelControl16, 0, 1);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel11.Location = new System.Drawing.Point(4, 276);
@@ -1211,21 +1138,22 @@
             this.LblNumberOfAttacks.TabIndex = 2;
             this.LblNumberOfAttacks.Text = "0";
             // 
-            // txtCostofAttacks
+            // txtCostofAttacksPrimary
             // 
-            this.txtCostofAttacks.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCostofAttacks.Location = new System.Drawing.Point(4, 90);
-            this.txtCostofAttacks.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.txtCostofAttacks.Name = "txtCostofAttacks";
-            this.txtCostofAttacks.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCostofAttacks.Properties.Appearance.Options.UseFont = true;
-            this.txtCostofAttacks.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtCostofAttacksPrimary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCostofAttacksPrimary.Location = new System.Drawing.Point(4, 90);
+            this.txtCostofAttacksPrimary.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txtCostofAttacksPrimary.Name = "txtCostofAttacksPrimary";
+            this.txtCostofAttacksPrimary.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCostofAttacksPrimary.Properties.Appearance.Options.UseFont = true;
+            this.txtCostofAttacksPrimary.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtCostofAttacks.Properties.NullText = "Please Select Cost Per Attack";
-            this.txtCostofAttacks.Properties.PopupView = this.searchLookUpEdit1View;
-            this.txtCostofAttacks.Size = new System.Drawing.Size(246, 32);
-            this.txtCostofAttacks.TabIndex = 4;
-            this.txtCostofAttacks.EditValueChanged += new System.EventHandler(this.txtCostofAttacks_EditValueChanged);
+            this.txtCostofAttacksPrimary.Properties.NullText = "Please Select Cost Per Attack";
+            this.txtCostofAttacksPrimary.Properties.PopupView = this.searchLookUpEdit1View;
+            this.txtCostofAttacksPrimary.Size = new System.Drawing.Size(246, 32);
+            this.txtCostofAttacksPrimary.TabIndex = 4;
+            this.txtCostofAttacksPrimary.EditValueChanged += new System.EventHandler(this.txtCostofAttacks_EditValueChanged);
+            this.txtCostofAttacksPrimary.DoubleClick += new System.EventHandler(this.txtCostofAttacksPrimary_DoubleClick);
             // 
             // searchLookUpEdit1View
             // 
@@ -1265,7 +1193,7 @@
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(246, 40);
             this.labelControl16.TabIndex = 6;
-            this.labelControl16.Text = "Select Cost Per Attack";
+            this.labelControl16.Text = "Select Primary Cost Per Attack";
             // 
             // tableLayoutPanel13
             // 
@@ -1274,11 +1202,11 @@
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel13.Controls.Add(this.labelControl15, 0, 0);
-            this.tableLayoutPanel13.Controls.Add(this.lblTotalCost, 1, 0);
+            this.tableLayoutPanel13.Controls.Add(this.lblTotalCostPerPecPrimary, 1, 0);
             this.tableLayoutPanel13.Controls.Add(this.labelControl19, 0, 2);
-            this.tableLayoutPanel13.Controls.Add(this.lblDamagePerPec, 1, 2);
+            this.tableLayoutPanel13.Controls.Add(this.lblDamagePerPecPrimary, 1, 2);
             this.tableLayoutPanel13.Controls.Add(this.labelControl17, 0, 1);
-            this.tableLayoutPanel13.Controls.Add(this.lblTotalCostPed, 1, 1);
+            this.tableLayoutPanel13.Controls.Add(this.lblTotalCostPedPrimary, 1, 1);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel13.Location = new System.Drawing.Point(266, 276);
             this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -1305,20 +1233,20 @@
             this.labelControl15.TabIndex = 3;
             this.labelControl15.Text = "Total Cost Pec";
             // 
-            // lblTotalCost
+            // lblTotalCostPerPecPrimary
             // 
-            this.lblTotalCost.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.lblTotalCost.Appearance.ForeColor = System.Drawing.Color.White;
-            this.lblTotalCost.Appearance.Options.UseFont = true;
-            this.lblTotalCost.Appearance.Options.UseForeColor = true;
-            this.lblTotalCost.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTotalCost.Location = new System.Drawing.Point(131, 2);
-            this.lblTotalCost.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.lblTotalCost.Name = "lblTotalCost";
-            this.lblTotalCost.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.lblTotalCost.Size = new System.Drawing.Size(119, 40);
-            this.lblTotalCost.TabIndex = 4;
-            this.lblTotalCost.Text = "0";
+            this.lblTotalCostPerPecPrimary.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTotalCostPerPecPrimary.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblTotalCostPerPecPrimary.Appearance.Options.UseFont = true;
+            this.lblTotalCostPerPecPrimary.Appearance.Options.UseForeColor = true;
+            this.lblTotalCostPerPecPrimary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalCostPerPecPrimary.Location = new System.Drawing.Point(131, 2);
+            this.lblTotalCostPerPecPrimary.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.lblTotalCostPerPecPrimary.Name = "lblTotalCostPerPecPrimary";
+            this.lblTotalCostPerPecPrimary.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lblTotalCostPerPecPrimary.Size = new System.Drawing.Size(119, 40);
+            this.lblTotalCostPerPecPrimary.TabIndex = 4;
+            this.lblTotalCostPerPecPrimary.Text = "0";
             // 
             // labelControl19
             // 
@@ -1334,20 +1262,20 @@
             this.labelControl19.TabIndex = 6;
             this.labelControl19.Text = "Damage Per Pec";
             // 
-            // lblDamagePerPec
+            // lblDamagePerPecPrimary
             // 
-            this.lblDamagePerPec.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDamagePerPec.Appearance.ForeColor = System.Drawing.Color.White;
-            this.lblDamagePerPec.Appearance.Options.UseFont = true;
-            this.lblDamagePerPec.Appearance.Options.UseForeColor = true;
-            this.lblDamagePerPec.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDamagePerPec.Location = new System.Drawing.Point(131, 90);
-            this.lblDamagePerPec.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.lblDamagePerPec.Name = "lblDamagePerPec";
-            this.lblDamagePerPec.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.lblDamagePerPec.Size = new System.Drawing.Size(119, 41);
-            this.lblDamagePerPec.TabIndex = 5;
-            this.lblDamagePerPec.Text = "0";
+            this.lblDamagePerPecPrimary.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lblDamagePerPecPrimary.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblDamagePerPecPrimary.Appearance.Options.UseFont = true;
+            this.lblDamagePerPecPrimary.Appearance.Options.UseForeColor = true;
+            this.lblDamagePerPecPrimary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDamagePerPecPrimary.Location = new System.Drawing.Point(131, 90);
+            this.lblDamagePerPecPrimary.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.lblDamagePerPecPrimary.Name = "lblDamagePerPecPrimary";
+            this.lblDamagePerPecPrimary.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lblDamagePerPecPrimary.Size = new System.Drawing.Size(119, 41);
+            this.lblDamagePerPecPrimary.TabIndex = 5;
+            this.lblDamagePerPecPrimary.Text = "0";
             // 
             // labelControl17
             // 
@@ -1363,20 +1291,20 @@
             this.labelControl17.TabIndex = 7;
             this.labelControl17.Text = "Total Cost Ped";
             // 
-            // lblTotalCostPed
+            // lblTotalCostPedPrimary
             // 
-            this.lblTotalCostPed.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.lblTotalCostPed.Appearance.ForeColor = System.Drawing.Color.White;
-            this.lblTotalCostPed.Appearance.Options.UseFont = true;
-            this.lblTotalCostPed.Appearance.Options.UseForeColor = true;
-            this.lblTotalCostPed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTotalCostPed.Location = new System.Drawing.Point(131, 46);
-            this.lblTotalCostPed.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.lblTotalCostPed.Name = "lblTotalCostPed";
-            this.lblTotalCostPed.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.lblTotalCostPed.Size = new System.Drawing.Size(119, 40);
-            this.lblTotalCostPed.TabIndex = 8;
-            this.lblTotalCostPed.Text = "0";
+            this.lblTotalCostPedPrimary.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTotalCostPedPrimary.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblTotalCostPedPrimary.Appearance.Options.UseFont = true;
+            this.lblTotalCostPedPrimary.Appearance.Options.UseForeColor = true;
+            this.lblTotalCostPedPrimary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalCostPedPrimary.Location = new System.Drawing.Point(131, 46);
+            this.lblTotalCostPedPrimary.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.lblTotalCostPedPrimary.Name = "lblTotalCostPedPrimary";
+            this.lblTotalCostPedPrimary.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lblTotalCostPedPrimary.Size = new System.Drawing.Size(119, 40);
+            this.lblTotalCostPedPrimary.TabIndex = 8;
+            this.lblTotalCostPedPrimary.Text = "0";
             // 
             // tableLayoutPanel14
             // 
@@ -1537,6 +1465,523 @@
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "Enhancer 1";
             // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Controls.Add(this.labelControl9, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.lblHitCPercentage, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.labelControl12, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.lblHitPercentage, 1, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(4, 139);
+            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 2;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(254, 133);
+            this.tableLayoutPanel10.TabIndex = 8;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Appearance.Options.UseForeColor = true;
+            this.labelControl9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl9.Location = new System.Drawing.Point(4, 68);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
+            this.labelControl9.Size = new System.Drawing.Size(119, 63);
+            this.labelControl9.TabIndex = 5;
+            this.labelControl9.Text = "C. Hit %";
+            // 
+            // lblHitCPercentage
+            // 
+            this.lblHitCPercentage.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lblHitCPercentage.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblHitCPercentage.Appearance.Options.UseFont = true;
+            this.lblHitCPercentage.Appearance.Options.UseForeColor = true;
+            this.lblHitCPercentage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblHitCPercentage.Location = new System.Drawing.Point(131, 68);
+            this.lblHitCPercentage.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.lblHitCPercentage.Name = "lblHitCPercentage";
+            this.lblHitCPercentage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
+            this.lblHitCPercentage.Size = new System.Drawing.Size(119, 63);
+            this.lblHitCPercentage.TabIndex = 4;
+            this.lblHitCPercentage.Text = "%";
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl12.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl12.Appearance.Options.UseFont = true;
+            this.labelControl12.Appearance.Options.UseForeColor = true;
+            this.labelControl12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl12.Location = new System.Drawing.Point(4, 2);
+            this.labelControl12.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
+            this.labelControl12.Size = new System.Drawing.Size(119, 62);
+            this.labelControl12.TabIndex = 3;
+            this.labelControl12.Text = "Hit %";
+            // 
+            // lblHitPercentage
+            // 
+            this.lblHitPercentage.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lblHitPercentage.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblHitPercentage.Appearance.Options.UseFont = true;
+            this.lblHitPercentage.Appearance.Options.UseForeColor = true;
+            this.lblHitPercentage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblHitPercentage.Location = new System.Drawing.Point(131, 2);
+            this.lblHitPercentage.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.lblHitPercentage.Name = "lblHitPercentage";
+            this.lblHitPercentage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
+            this.lblHitPercentage.Size = new System.Drawing.Size(119, 62);
+            this.lblHitPercentage.TabIndex = 6;
+            this.lblHitPercentage.Text = "%";
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(124)))), ((int)(((byte)(124)))));
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel16, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.txtCostofAttacksSecondary, 0, 2);
+            this.tableLayoutPanel6.Controls.Add(this.labelControl27, 0, 1);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 413);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 3;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(254, 133);
+            this.tableLayoutPanel6.TabIndex = 13;
+            // 
+            // tableLayoutPanel16
+            // 
+            this.tableLayoutPanel16.ColumnCount = 2;
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.Controls.Add(this.labelControl5, 0, 0);
+            this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(4, 2);
+            this.tableLayoutPanel16.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
+            this.tableLayoutPanel16.RowCount = 1;
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(246, 40);
+            this.tableLayoutPanel16.TabIndex = 3;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseForeColor = true;
+            this.labelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl5.Location = new System.Drawing.Point(4, 2);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(115, 36);
+            this.labelControl5.TabIndex = 1;
+            this.labelControl5.Text = "Secondary";
+            // 
+            // txtCostofAttacksSecondary
+            // 
+            this.txtCostofAttacksSecondary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCostofAttacksSecondary.Location = new System.Drawing.Point(4, 90);
+            this.txtCostofAttacksSecondary.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txtCostofAttacksSecondary.Name = "txtCostofAttacksSecondary";
+            this.txtCostofAttacksSecondary.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCostofAttacksSecondary.Properties.Appearance.Options.UseFont = true;
+            this.txtCostofAttacksSecondary.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtCostofAttacksSecondary.Properties.NullText = "Please Select Cost Per Attack";
+            this.txtCostofAttacksSecondary.Properties.PopupView = this.gridView2;
+            this.txtCostofAttacksSecondary.Size = new System.Drawing.Size(246, 32);
+            this.txtCostofAttacksSecondary.TabIndex = 4;
+            this.txtCostofAttacksSecondary.EditValueChanged += new System.EventHandler(this.txtCostofAttacksSecondary_EditValueChanged);
+            this.txtCostofAttacksSecondary.DoubleClick += new System.EventHandler(this.txtCostofAttacksSecondary_DoubleClick);
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn7,
+            this.gridColumn8});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Value";
+            this.gridColumn7.FieldName = "Value";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 0;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Description";
+            this.gridColumn8.FieldName = "Description";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 1;
+            // 
+            // labelControl27
+            // 
+            this.labelControl27.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl27.Appearance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelControl27.Appearance.Options.UseFont = true;
+            this.labelControl27.Appearance.Options.UseForeColor = true;
+            this.labelControl27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl27.Location = new System.Drawing.Point(4, 46);
+            this.labelControl27.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl27.Name = "labelControl27";
+            this.labelControl27.Size = new System.Drawing.Size(246, 40);
+            this.labelControl27.TabIndex = 6;
+            this.labelControl27.Text = "Select Secondary Cost Per Attack";
+            // 
+            // tableLayoutPanel17
+            // 
+            this.tableLayoutPanel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(124)))), ((int)(((byte)(124)))));
+            this.tableLayoutPanel17.ColumnCount = 2;
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel17.Controls.Add(this.labelControl29, 0, 0);
+            this.tableLayoutPanel17.Controls.Add(this.lblTotalCostPerPecSecondary, 1, 0);
+            this.tableLayoutPanel17.Controls.Add(this.labelControl33, 0, 2);
+            this.tableLayoutPanel17.Controls.Add(this.lblDamagePerPecSecondary, 1, 2);
+            this.tableLayoutPanel17.Controls.Add(this.labelControl35, 0, 1);
+            this.tableLayoutPanel17.Controls.Add(this.lblTotalCostPedSecondary, 1, 1);
+            this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel17.Location = new System.Drawing.Point(266, 413);
+            this.tableLayoutPanel17.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tableLayoutPanel17.Name = "tableLayoutPanel17";
+            this.tableLayoutPanel17.RowCount = 3;
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(254, 133);
+            this.tableLayoutPanel17.TabIndex = 14;
+            this.tableLayoutPanel17.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel17_Paint);
+            // 
+            // labelControl29
+            // 
+            this.labelControl29.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl29.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl29.Appearance.Options.UseFont = true;
+            this.labelControl29.Appearance.Options.UseForeColor = true;
+            this.labelControl29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl29.Location = new System.Drawing.Point(4, 2);
+            this.labelControl29.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl29.Name = "labelControl29";
+            this.labelControl29.Size = new System.Drawing.Size(119, 40);
+            this.labelControl29.TabIndex = 3;
+            this.labelControl29.Text = "Total Cost Pec";
+            // 
+            // lblTotalCostPerPecSecondary
+            // 
+            this.lblTotalCostPerPecSecondary.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTotalCostPerPecSecondary.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblTotalCostPerPecSecondary.Appearance.Options.UseFont = true;
+            this.lblTotalCostPerPecSecondary.Appearance.Options.UseForeColor = true;
+            this.lblTotalCostPerPecSecondary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalCostPerPecSecondary.Location = new System.Drawing.Point(131, 2);
+            this.lblTotalCostPerPecSecondary.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.lblTotalCostPerPecSecondary.Name = "lblTotalCostPerPecSecondary";
+            this.lblTotalCostPerPecSecondary.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lblTotalCostPerPecSecondary.Size = new System.Drawing.Size(119, 40);
+            this.lblTotalCostPerPecSecondary.TabIndex = 4;
+            this.lblTotalCostPerPecSecondary.Text = "0";
+            // 
+            // labelControl33
+            // 
+            this.labelControl33.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl33.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl33.Appearance.Options.UseFont = true;
+            this.labelControl33.Appearance.Options.UseForeColor = true;
+            this.labelControl33.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl33.Location = new System.Drawing.Point(4, 90);
+            this.labelControl33.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl33.Name = "labelControl33";
+            this.labelControl33.Size = new System.Drawing.Size(119, 41);
+            this.labelControl33.TabIndex = 6;
+            this.labelControl33.Text = "Damage Per Pec";
+            // 
+            // lblDamagePerPecSecondary
+            // 
+            this.lblDamagePerPecSecondary.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lblDamagePerPecSecondary.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblDamagePerPecSecondary.Appearance.Options.UseFont = true;
+            this.lblDamagePerPecSecondary.Appearance.Options.UseForeColor = true;
+            this.lblDamagePerPecSecondary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDamagePerPecSecondary.Location = new System.Drawing.Point(131, 90);
+            this.lblDamagePerPecSecondary.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.lblDamagePerPecSecondary.Name = "lblDamagePerPecSecondary";
+            this.lblDamagePerPecSecondary.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lblDamagePerPecSecondary.Size = new System.Drawing.Size(119, 41);
+            this.lblDamagePerPecSecondary.TabIndex = 5;
+            this.lblDamagePerPecSecondary.Text = "0";
+            // 
+            // labelControl35
+            // 
+            this.labelControl35.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl35.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl35.Appearance.Options.UseFont = true;
+            this.labelControl35.Appearance.Options.UseForeColor = true;
+            this.labelControl35.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl35.Location = new System.Drawing.Point(4, 46);
+            this.labelControl35.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl35.Name = "labelControl35";
+            this.labelControl35.Size = new System.Drawing.Size(119, 40);
+            this.labelControl35.TabIndex = 7;
+            this.labelControl35.Text = "Total Cost Ped";
+            // 
+            // lblTotalCostPedSecondary
+            // 
+            this.lblTotalCostPedSecondary.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTotalCostPedSecondary.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblTotalCostPedSecondary.Appearance.Options.UseFont = true;
+            this.lblTotalCostPedSecondary.Appearance.Options.UseForeColor = true;
+            this.lblTotalCostPedSecondary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalCostPedSecondary.Location = new System.Drawing.Point(131, 46);
+            this.lblTotalCostPedSecondary.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.lblTotalCostPedSecondary.Name = "lblTotalCostPedSecondary";
+            this.lblTotalCostPedSecondary.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lblTotalCostPedSecondary.Size = new System.Drawing.Size(119, 40);
+            this.lblTotalCostPedSecondary.TabIndex = 8;
+            this.lblTotalCostPedSecondary.Text = "0";
+            // 
+            // tableLayoutPanel18
+            // 
+            this.tableLayoutPanel18.BackColor = System.Drawing.Color.DarkOrchid;
+            this.tableLayoutPanel18.ColumnCount = 2;
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel18.Controls.Add(this.labelControl26, 0, 0);
+            this.tableLayoutPanel18.Controls.Add(this.lblTxtTotalValue, 1, 0);
+            this.tableLayoutPanel18.Controls.Add(this.labelControl37, 0, 1);
+            this.tableLayoutPanel18.Controls.Add(this.lblEnchancerBreakCount, 1, 1);
+            this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(528, 413);
+            this.tableLayoutPanel18.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
+            this.tableLayoutPanel18.RowCount = 3;
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(253, 133);
+            this.tableLayoutPanel18.TabIndex = 15;
+            // 
+            // labelControl26
+            // 
+            this.labelControl26.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl26.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl26.Appearance.Options.UseFont = true;
+            this.labelControl26.Appearance.Options.UseForeColor = true;
+            this.labelControl26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl26.Location = new System.Drawing.Point(4, 2);
+            this.labelControl26.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl26.Name = "labelControl26";
+            this.labelControl26.Size = new System.Drawing.Size(118, 40);
+            this.labelControl26.TabIndex = 3;
+            this.labelControl26.Text = "T T Return";
+            // 
+            // lblTxtTotalValue
+            // 
+            this.lblTxtTotalValue.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTxtTotalValue.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblTxtTotalValue.Appearance.Options.UseFont = true;
+            this.lblTxtTotalValue.Appearance.Options.UseForeColor = true;
+            this.lblTxtTotalValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTxtTotalValue.Location = new System.Drawing.Point(130, 2);
+            this.lblTxtTotalValue.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.lblTxtTotalValue.Name = "lblTxtTotalValue";
+            this.lblTxtTotalValue.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lblTxtTotalValue.Size = new System.Drawing.Size(119, 40);
+            this.lblTxtTotalValue.TabIndex = 4;
+            this.lblTxtTotalValue.Text = "0";
+            // 
+            // labelControl37
+            // 
+            this.labelControl37.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl37.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl37.Appearance.Options.UseFont = true;
+            this.labelControl37.Appearance.Options.UseForeColor = true;
+            this.labelControl37.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl37.Location = new System.Drawing.Point(4, 46);
+            this.labelControl37.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl37.Name = "labelControl37";
+            this.labelControl37.Size = new System.Drawing.Size(118, 40);
+            this.labelControl37.TabIndex = 7;
+            this.labelControl37.Text = "Total B-S";
+            // 
+            // lblEnchancerBreakCount
+            // 
+            this.lblEnchancerBreakCount.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lblEnchancerBreakCount.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblEnchancerBreakCount.Appearance.Options.UseFont = true;
+            this.lblEnchancerBreakCount.Appearance.Options.UseForeColor = true;
+            this.lblEnchancerBreakCount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblEnchancerBreakCount.Location = new System.Drawing.Point(130, 46);
+            this.lblEnchancerBreakCount.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.lblEnchancerBreakCount.Name = "lblEnchancerBreakCount";
+            this.lblEnchancerBreakCount.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lblEnchancerBreakCount.Size = new System.Drawing.Size(119, 40);
+            this.lblEnchancerBreakCount.TabIndex = 8;
+            this.lblEnchancerBreakCount.Text = "0";
+            // 
+            // tableLayoutPanel19
+            // 
+            this.tableLayoutPanel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
+            this.tableLayoutPanel19.ColumnCount = 2;
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel19.Controls.Add(this.lblTTCost, 1, 3);
+            this.tableLayoutPanel19.Controls.Add(this.labelControl36, 0, 2);
+            this.tableLayoutPanel19.Controls.Add(this.labelControl39, 0, 0);
+            this.tableLayoutPanel19.Controls.Add(this.labelControl40, 0, 1);
+            this.tableLayoutPanel19.Controls.Add(this.LblTotalCost, 1, 0);
+            this.tableLayoutPanel19.Controls.Add(this.labelControl42, 0, 3);
+            this.tableLayoutPanel19.Controls.Add(this.txtArmorDecay, 1, 1);
+            this.tableLayoutPanel19.Controls.Add(this.txtHealing, 1, 2);
+            this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(789, 413);
+            this.tableLayoutPanel19.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
+            this.tableLayoutPanel19.RowCount = 4;
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(259, 133);
+            this.tableLayoutPanel19.TabIndex = 16;
+            // 
+            // lblTTCost
+            // 
+            this.lblTTCost.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTTCost.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblTTCost.Appearance.Options.UseFont = true;
+            this.lblTTCost.Appearance.Options.UseForeColor = true;
+            this.lblTTCost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTTCost.Location = new System.Drawing.Point(133, 101);
+            this.lblTTCost.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.lblTTCost.Name = "lblTTCost";
+            this.lblTTCost.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lblTTCost.Size = new System.Drawing.Size(122, 30);
+            this.lblTTCost.TabIndex = 3;
+            this.lblTTCost.Text = "0";
+            // 
+            // labelControl36
+            // 
+            this.labelControl36.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl36.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl36.Appearance.Options.UseFont = true;
+            this.labelControl36.Appearance.Options.UseForeColor = true;
+            this.labelControl36.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl36.Location = new System.Drawing.Point(4, 68);
+            this.labelControl36.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl36.Name = "labelControl36";
+            this.labelControl36.Size = new System.Drawing.Size(121, 29);
+            this.labelControl36.TabIndex = 3;
+            this.labelControl36.Text = "Healing";
+            // 
+            // labelControl39
+            // 
+            this.labelControl39.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl39.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl39.Appearance.Options.UseFont = true;
+            this.labelControl39.Appearance.Options.UseForeColor = true;
+            this.labelControl39.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl39.Location = new System.Drawing.Point(4, 2);
+            this.labelControl39.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl39.Name = "labelControl39";
+            this.labelControl39.Size = new System.Drawing.Size(121, 29);
+            this.labelControl39.TabIndex = 1;
+            this.labelControl39.Text = "Cost";
+            this.labelControl39.Click += new System.EventHandler(this.labelControl39_Click);
+            // 
+            // labelControl40
+            // 
+            this.labelControl40.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl40.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl40.Appearance.Options.UseFont = true;
+            this.labelControl40.Appearance.Options.UseForeColor = true;
+            this.labelControl40.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl40.Location = new System.Drawing.Point(4, 35);
+            this.labelControl40.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl40.Name = "labelControl40";
+            this.labelControl40.Size = new System.Drawing.Size(121, 29);
+            this.labelControl40.TabIndex = 2;
+            this.labelControl40.Text = "Armor Decay";
+            // 
+            // LblTotalCost
+            // 
+            this.LblTotalCost.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.LblTotalCost.Appearance.ForeColor = System.Drawing.Color.White;
+            this.LblTotalCost.Appearance.Options.UseFont = true;
+            this.LblTotalCost.Appearance.Options.UseForeColor = true;
+            this.LblTotalCost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LblTotalCost.Location = new System.Drawing.Point(133, 2);
+            this.LblTotalCost.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.LblTotalCost.Name = "LblTotalCost";
+            this.LblTotalCost.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.LblTotalCost.Size = new System.Drawing.Size(122, 29);
+            this.LblTotalCost.TabIndex = 3;
+            this.LblTotalCost.Text = "0";
+            // 
+            // labelControl42
+            // 
+            this.labelControl42.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl42.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl42.Appearance.Options.UseFont = true;
+            this.labelControl42.Appearance.Options.UseForeColor = true;
+            this.labelControl42.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl42.Location = new System.Drawing.Point(4, 101);
+            this.labelControl42.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl42.Name = "labelControl42";
+            this.labelControl42.Size = new System.Drawing.Size(121, 30);
+            this.labelControl42.TabIndex = 5;
+            this.labelControl42.Text = "T T Cost";
+            // 
+            // txtArmorDecay
+            // 
+            this.txtArmorDecay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtArmorDecay.Location = new System.Drawing.Point(132, 36);
+            this.txtArmorDecay.Name = "txtArmorDecay";
+            this.txtArmorDecay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F);
+            this.txtArmorDecay.Properties.Appearance.Options.UseFont = true;
+            this.txtArmorDecay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtArmorDecay.Size = new System.Drawing.Size(124, 32);
+            this.txtArmorDecay.TabIndex = 17;
+            this.txtArmorDecay.EditValueChanged += new System.EventHandler(this.txtArmorDecay_EditValueChanged);
+            // 
+            // txtHealing
+            // 
+            this.txtHealing.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtHealing.Location = new System.Drawing.Point(132, 69);
+            this.txtHealing.Name = "txtHealing";
+            this.txtHealing.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F);
+            this.txtHealing.Properties.Appearance.Options.UseFont = true;
+            this.txtHealing.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtHealing.Size = new System.Drawing.Size(124, 32);
+            this.txtHealing.TabIndex = 18;
+            this.txtHealing.EditValueChanged += new System.EventHandler(this.txtHealing_EditValueChanged);
+            // 
             // btnStart
             // 
             this.btnStart.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
@@ -1650,8 +2095,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel15.PerformLayout();
-            this.tableLayoutPanel10.ResumeLayout(false);
-            this.tableLayoutPanel10.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1660,8 +2103,6 @@
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
@@ -1672,12 +2113,28 @@
             this.tableLayoutPanel11.PerformLayout();
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCostofAttacks.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCostofAttacksPrimary.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel13.PerformLayout();
             this.tableLayoutPanel14.ResumeLayout(false);
             this.tableLayoutPanel14.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
+            this.tableLayoutPanel16.ResumeLayout(false);
+            this.tableLayoutPanel16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCostofAttacksSecondary.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            this.tableLayoutPanel17.ResumeLayout(false);
+            this.tableLayoutPanel17.PerformLayout();
+            this.tableLayoutPanel18.ResumeLayout(false);
+            this.tableLayoutPanel18.PerformLayout();
+            this.tableLayoutPanel19.ResumeLayout(false);
+            this.tableLayoutPanel19.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtArmorDecay.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHealing.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOutputFilePath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
@@ -1716,8 +2173,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private DevExpress.XtraEditors.LabelControl lblDamageInflicted;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private DevExpress.XtraEditors.LabelControl lblTotalInflictedDamage;
         private DevExpress.XtraEditors.LabelControl labelControl6;
@@ -1742,7 +2197,7 @@
         private DevExpress.XtraEditors.LabelControl LblNumberOfAttacks;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private DevExpress.XtraEditors.LabelControl labelControl13;
-        private DevExpress.XtraEditors.SearchLookUpEdit txtCostofAttacks;
+        private DevExpress.XtraEditors.SearchLookUpEdit txtCostofAttacksPrimary;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
@@ -1750,10 +2205,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private DevExpress.XtraEditors.LabelControl labelControl19;
         private DevExpress.XtraEditors.LabelControl labelControl15;
-        private DevExpress.XtraEditors.LabelControl lblTotalCost;
-        private DevExpress.XtraEditors.LabelControl lblDamagePerPec;
+        private DevExpress.XtraEditors.LabelControl lblTotalCostPerPecPrimary;
+        private DevExpress.XtraEditors.LabelControl lblDamagePerPecPrimary;
         private DevExpress.XtraEditors.LabelControl labelControl17;
-        private DevExpress.XtraEditors.LabelControl lblTotalCostPed;
+        private DevExpress.XtraEditors.LabelControl lblTotalCostPedPrimary;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private DevExpress.XtraEditors.LabelControl labelControl31;
@@ -1789,5 +2244,34 @@
         private DevExpress.XtraEditors.LabelControl LblSwordDamage;
         private DevExpress.XtraEditors.LabelControl labelControl23;
         private DevExpress.XtraEditors.LabelControl labelControl24;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.SearchLookUpEdit txtCostofAttacksSecondary;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraEditors.LabelControl labelControl27;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
+        private DevExpress.XtraEditors.LabelControl labelControl29;
+        private DevExpress.XtraEditors.LabelControl lblTotalCostPerPecSecondary;
+        private DevExpress.XtraEditors.LabelControl labelControl33;
+        private DevExpress.XtraEditors.LabelControl lblDamagePerPecSecondary;
+        private DevExpress.XtraEditors.LabelControl labelControl35;
+        private DevExpress.XtraEditors.LabelControl lblTotalCostPedSecondary;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
+        private DevExpress.XtraEditors.LabelControl labelControl26;
+        private DevExpress.XtraEditors.LabelControl lblTxtTotalValue;
+        private DevExpress.XtraEditors.LabelControl labelControl37;
+        private DevExpress.XtraEditors.LabelControl lblEnchancerBreakCount;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
+        private DevExpress.XtraEditors.LabelControl lblTTCost;
+        private DevExpress.XtraEditors.LabelControl labelControl36;
+        private DevExpress.XtraEditors.LabelControl labelControl39;
+        private DevExpress.XtraEditors.LabelControl labelControl40;
+        private DevExpress.XtraEditors.LabelControl LblTotalCost;
+        private DevExpress.XtraEditors.LabelControl labelControl42;
+        private DevExpress.XtraEditors.CalcEdit txtArmorDecay;
+        private DevExpress.XtraEditors.CalcEdit txtHealing;
     }
 }

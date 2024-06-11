@@ -62,6 +62,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmcustomValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmcustomValue.Designer.cs">
+      <DependentUpon>FrmcustomValue.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReportDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmcustomValue.resx">
+      <DependentUpon>FrmcustomValue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReportDashboard.resx">
       <DependentUpon>FrmReportDashboard.cs</DependentUpon>

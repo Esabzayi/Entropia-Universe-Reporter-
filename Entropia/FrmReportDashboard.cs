@@ -14,6 +14,7 @@ using DevExpress.Utils.Html.Internal;
 using System.Runtime.InteropServices;
 using static System.Net.Mime.MediaTypeNames;
 using DevExpress.XtraPrinting.Native;
+using DevExpress.XtraGrid;
 
 namespace Entropia
 {
@@ -24,6 +25,7 @@ namespace Entropia
         double RiffleDamageSum = 0;
         double RiffleDamageCount = 0;
         DataTable CostOfAttack = new DataTable();
+        DataTable CostOfAttackSecondary = new DataTable();
         private string inputFilePath;
         private string outputFile;
 
@@ -122,10 +124,19 @@ namespace Entropia
             CostOfAttack.Rows.Add("Weapon + Amplifier + Metric + T0", 47.8560);
             CostOfAttack.Rows.Add("Weapon + Amplifier + T4", 60.5704);
             CostOfAttack.Rows.Add("Weapon + Amplifier + T0", 47.8360);
-            txtCostofAttacks.Properties.DataSource = CostOfAttack;
-            txtCostofAttacks.Properties.ValueMember = "Value";
-            txtCostofAttacks.Properties.DisplayMember = "Value";
-            txtCostofAttacks.EditValue = 60.5904;
+            txtCostofAttacksPrimary.Properties.DataSource = CostOfAttack;
+            txtCostofAttacksPrimary.Properties.ValueMember = "Value";
+            txtCostofAttacksPrimary.Properties.DisplayMember = "Value";
+            txtCostofAttacksPrimary.EditValue = 60.5904;
+
+            CostOfAttackSecondary.Columns.Add("Description");
+            CostOfAttackSecondary.Columns.Add("Value");
+            CostOfAttackSecondary.Rows.Add("Riffle", 15.255);
+            CostOfAttackSecondary.Rows.Add("Riffle", 24.253);
+            txtCostofAttacksSecondary.Properties.DataSource = CostOfAttackSecondary;
+            txtCostofAttacksSecondary.Properties.ValueMember = "Value";
+            txtCostofAttacksSecondary.Properties.DisplayMember = "Value";
+            txtCostofAttacksSecondary.EditValue = 15.255;
 
             YouReceived_List.Columns.Add("Item");
             YouReceived_List.Columns.Add("Value", Type.GetType("System.Double"));
@@ -137,7 +148,7 @@ namespace Entropia
             Console.WriteLine("Keylogger is running. Press '1' for Sword and '2' for Riffle.");
 
             _hookID = SetHook(_proc);
-           
+            gridView1.Columns["Value"].Summary.Add(new GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Value", "{0:n2}"));
         }
 
 
@@ -285,27 +296,27 @@ namespace Entropia
 
 
 
-                if (lblTotalCost.InvokeRequired)
+                if (lblTotalCostPerPecPrimary.InvokeRequired)
                 {
-                    lblTotalCost.Invoke(new Action(() => CalculateAndDisplayResults()));
+                    lblTotalCostPerPecPrimary.Invoke(new Action(() => CalculateAndDisplayResults()));
                 }
                 else
                 {
                     CalculateAndDisplayResults();
                 }
 
-                if (lblDamagePerPec.InvokeRequired)
+                if (lblDamagePerPecPrimary.InvokeRequired)
                 {
-                    lblDamagePerPec.Invoke(new Action(() => CalculateAndDisplayResults()));
+                    lblDamagePerPecPrimary.Invoke(new Action(() => CalculateAndDisplayResults()));
                 }
                 else
                 {
                     CalculateAndDisplayResults();
                 }
 
-                if (lblTotalCostPed.InvokeRequired)
+                if (lblTotalCostPedPrimary.InvokeRequired)
                 {
-                    lblTotalCostPed.Invoke(new Action(() => CalculateAndDisplayResults()));
+                    lblTotalCostPedPrimary.Invoke(new Action(() => CalculateAndDisplayResults()));
                 }
                 else
                 {
@@ -467,6 +478,64 @@ namespace Entropia
                 else
                 {
                     CalculateAndDisplayResults();
+                }
+
+
+                if (lblTotalCostPerPecSecondary.InvokeRequired)
+                {
+                    lblTotalCostPerPecSecondary.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+                if (lblDamagePerPecSecondary.InvokeRequired)
+                {
+                    lblDamagePerPecSecondary.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+                if (lblTotalCostPedSecondary.InvokeRequired)
+                {
+                    lblTotalCostPedSecondary.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+                if (lblTxtTotalValue.InvokeRequired)
+                {
+                    lblTxtTotalValue.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+
+                }
+
+                if (lblEnchancerBreakCount.InvokeRequired)
+                {
+                    lblEnchancerBreakCount.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+
+                }
+
+                if (LblTotalCost.InvokeRequired)
+                {
+                    LblTotalCost.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+
                 }
                 await ReadFileAsync();
             }, null, debounceTime, Timeout.Infinite);
@@ -1014,36 +1083,7 @@ namespace Entropia
             }
 
 
-            double CostPerAttack = 0;
-            double.TryParse(txtCostofAttacks.Text, out CostPerAttack);
-
-            if (lblTotalCost.InvokeRequired)
-            {
-                lblTotalCost.Invoke(new Action(() => lblTotalCost.Text = Math.Round(TotalNumberOfAttacks * CostPerAttack, 4).ToString()));
-            }
-            else
-            {
-                lblTotalCost.Text = Math.Round(TotalNumberOfAttacks * CostPerAttack, 4).ToString();
-            }
-            double TotalCost = TotalNumberOfAttacks * CostPerAttack;
-            double TotalInflictedDamage = SimpleHitSum + DamageInflictedValue;
-            if (lblDamagePerPec.InvokeRequired)
-            {
-                lblDamagePerPec.Invoke(new Action(() => lblDamagePerPec.Text = Math.Round(TotalInflictedDamage / TotalCost, 4).ToString()));
-            }
-            else
-            {
-                lblDamagePerPec.Text = Math.Round(TotalInflictedDamage / TotalCost, 4).ToString();
-            }
-
-            if (lblTotalCostPed.InvokeRequired)
-            {
-                lblTotalCostPed.Invoke(new Action(() => lblTotalCostPed.Text = Math.Round(TotalCost / 100, 4).ToString()));
-            }
-            else
-            {
-                lblTotalCostPed.Text = Math.Round(TotalCost / 100, 4).ToString();
-            }
+          
 
             #region Enhancer
 
@@ -1208,7 +1248,120 @@ namespace Entropia
             {
                 LblSwordDamage.Text =Math.Round(SwordDamageSum,2).ToString();
             }
+
+
+            #region primary Region Calculations
+
+            double CostPerAttack = 0;
+            double.TryParse(txtCostofAttacksPrimary.Text, out CostPerAttack);
+
+            if (lblTotalCostPerPecPrimary.InvokeRequired)
+            {
+                lblTotalCostPerPecPrimary.Invoke(new Action(() => lblTotalCostPerPecPrimary.Text = Math.Round(SwordDamageCount * CostPerAttack, 4).ToString()));
+            }
+            else
+            {
+                lblTotalCostPerPecPrimary.Text = Math.Round(SwordDamageCount * CostPerAttack, 4).ToString();
+            }
+            double TotalCost = SwordDamageCount * CostPerAttack;
+
+            double TotalSwordDamage = SwordDamageSum;
+
+            if (lblDamagePerPecPrimary.InvokeRequired)
+            {
+                lblDamagePerPecPrimary.Invoke(new Action(() => lblDamagePerPecPrimary.Text = Math.Round(TotalSwordDamage / TotalCost, 4).ToString()));
+            }
+            else
+            {
+                lblDamagePerPecPrimary.Text = Math.Round(TotalSwordDamage / TotalCost, 4).ToString();
+            }
+
+            if (lblTotalCostPedPrimary.InvokeRequired)
+            {
+                lblTotalCostPedPrimary.Invoke(new Action(() => lblTotalCostPedPrimary.Text = Math.Round(TotalCost / 100, 4).ToString()));
+            }
+            else
+            {
+                lblTotalCostPedPrimary.Text = Math.Round(TotalCost / 100, 4).ToString();
+            }
+            #endregion
             //#endregion
+
+
+            #region secondary Region Calculations
+
+            double CostPerAttackSecondary = 0;
+            double.TryParse(txtCostofAttacksSecondary.Text, out CostPerAttackSecondary);
+
+            if (lblTotalCostPerPecSecondary.InvokeRequired)
+            {
+                lblTotalCostPerPecSecondary.Invoke(new Action(() => lblTotalCostPerPecSecondary.Text = Math.Round(RiffleDamageCount * CostPerAttackSecondary, 4).ToString()));
+            }
+            else
+            {
+                lblTotalCostPerPecSecondary.Text = Math.Round(RiffleDamageCount * CostPerAttackSecondary, 4).ToString();
+            }
+            double TotalCostSecondary = RiffleDamageCount * CostPerAttackSecondary;
+
+            double TotalRiffleDamage = RiffleDamageSum;
+
+            if (lblDamagePerPecSecondary.InvokeRequired)
+            {
+                lblDamagePerPecSecondary.Invoke(new Action(() => lblDamagePerPecSecondary.Text = Math.Round(TotalRiffleDamage / TotalCostSecondary, 4).ToString()));
+            }
+            else
+            {
+                lblDamagePerPecSecondary.Text = Math.Round(TotalRiffleDamage / TotalCostSecondary, 4).ToString();
+            }
+
+            if (lblTotalCostPedSecondary.InvokeRequired)
+            {
+                lblTotalCostPedSecondary.Invoke(new Action(() => lblTotalCostPedSecondary.Text = Math.Round(TotalCostSecondary / 100, 4).ToString()));
+            }
+            else
+            {
+                lblTotalCostPedSecondary.Text = Math.Round(TotalCostSecondary / 100, 4).ToString();
+            }
+            #endregion
+
+            double sum = YouReceived_List.AsEnumerable()
+                             .Sum(row => row.Field<double>("Value"));
+            double sumToSubtract = pedValues.Where(x => x == 0.8000).Sum();
+            // Count of rows with value 0.8000
+            int count = pedValues.Where(x => x == 0.8000).Count();
+
+            if (lblTxtTotalValue.InvokeRequired)
+            {
+                lblTxtTotalValue.Invoke(new Action(() => lblTxtTotalValue.Text = Math.Round(sum-sumToSubtract,4).ToString()));
+            }
+            else
+            {
+                lblTxtTotalValue.Text = Math.Round(sum-sumToSubtract, 4).ToString();
+            }
+
+
+            if (lblEnchancerBreakCount.InvokeRequired)
+            {
+                lblEnchancerBreakCount.Invoke(new Action(() => lblEnchancerBreakCount.Text =  count.ToString()));
+            }
+            else
+            {
+                lblEnchancerBreakCount.Text =count.ToString();
+            }
+
+            double PedPrimary = TotalCost / 100;
+            double PedSecondary = TotalCostSecondary / 100;
+
+
+            if (LblTotalCost.InvokeRequired)
+            {
+                LblTotalCost.Invoke(new Action(() => LblTotalCost.Text = (PedPrimary+PedSecondary).ToString()));
+            }
+            else
+            {
+                LblTotalCost.Text = (PedPrimary + PedSecondary).ToString();
+
+            }
         }
 
 
@@ -1280,25 +1433,25 @@ namespace Entropia
         private void txtCostofAttacks_EditValueChanged(object sender, EventArgs e)
         {
             double CostPerAttack = 0;
-            double.TryParse(txtCostofAttacks.Text, out CostPerAttack);
+            double.TryParse(txtCostofAttacksPrimary.Text, out CostPerAttack);
 
             double TotalNumberofAttacks = 0;
-            double.TryParse(LblNumberOfAttacks.Text, out TotalNumberofAttacks);
+            double.TryParse(lblswordcount.Text, out TotalNumberofAttacks);
 
             double CostPerPec = TotalNumberofAttacks * CostPerAttack;
 
-            lblTotalCost.Text = Math.Round(CostPerPec, 4).ToString();
+            lblTotalCostPerPecPrimary.Text = Math.Round(CostPerPec, 4).ToString();
 
-            lblTotalCostPed.Text = Math.Round(CostPerPec / 100, 4).ToString();
+            lblTotalCostPedPrimary.Text = Math.Round(CostPerPec / 100, 4).ToString();
 
 
             double SimpleHitSum = 0;
-            double CriticalHitSum = 0;
-            double.TryParse(LblHitDamageSum.Text, out SimpleHitSum);
-            double.TryParse(lblTotalInflictedDamage.Text, out SimpleHitSum);
-            double TotalInflictedDamage = SimpleHitSum + CriticalHitSum;
+           // double CriticalHitSum = 0;
+            double.TryParse(LblSwordDamage.Text, out SimpleHitSum);
+          //  double.TryParse(lblTotalInflictedDamage.Text, out CriticalHitSum);
+            double TotalInflictedDamage = SimpleHitSum;
 
-            lblDamagePerPec.Text = Math.Round(TotalInflictedDamage / CostPerPec, 4).ToString();
+            lblDamagePerPecPrimary.Text = Math.Round(TotalInflictedDamage / CostPerPec, 4).ToString();
         }
 
         #region Keylogger Logic
@@ -1343,9 +1496,79 @@ namespace Entropia
         }
 
 
+
         #endregion
 
+        private void tableLayoutPanel17_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+
+        private void txtCostofAttacksSecondary_EditValueChanged(object sender, EventArgs e)
+        {
+            double CostPerAttack = 0;
+            double.TryParse(txtCostofAttacksSecondary.Text, out CostPerAttack);
+
+            double TotalNumberofAttacks = 0;
+            double.TryParse(LblRiffleCount.Text, out TotalNumberofAttacks);
+
+            double CostPerPec = TotalNumberofAttacks * CostPerAttack;
+
+            lblTotalCostPerPecSecondary.Text = Math.Round(CostPerPec, 4).ToString();
+
+            lblTotalCostPedSecondary.Text = Math.Round(CostPerPec / 100, 4).ToString();
+
+
+            double SimpleHitSum = 0;
+            // double CriticalHitSum = 0;
+            double.TryParse(lblRfilleDamage.Text, out SimpleHitSum);
+            //  double.TryParse(lblTotalInflictedDamage.Text, out CriticalHitSum);
+            double TotalInflictedDamage = SimpleHitSum;
+
+            lblDamagePerPecSecondary.Text = Math.Round(TotalInflictedDamage / CostPerPec, 4).ToString();
+        }
+
+        private void txtCostofAttacksPrimary_DoubleClick(object sender, EventArgs e)
+        {
+            FrmcustomValue frm = new FrmcustomValue();
+            frm.ShowDialog();
+           if( frm.DialogResult == DialogResult.OK)
+            {
+                CostOfAttack.Rows.Add("Custom Value", frm.txtCustomValue.Value);
+                txtCostofAttacksPrimary.Text = frm.txtCustomValue.Value.ToString();
+            }
+        }
+
+        private void txtCostofAttacksSecondary_DoubleClick(object sender, EventArgs e)
+        {
+            FrmcustomValue frm = new FrmcustomValue();
+            frm.ShowDialog();
+            if (frm.DialogResult == DialogResult.OK)
+            {
+                CostOfAttackSecondary.Rows.Add("Custom Value", frm.txtCustomValue.Value);
+                txtCostofAttacksSecondary.Text = frm.txtCustomValue.Value.ToString();
+            }
+        }
+
+        private void labelControl39_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtArmorDecay_EnabledChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtArmorDecay_EditValueChanged(object sender, EventArgs e)
+        {
+            lblTTCost.Text = (txtArmorDecay.Value + txtHealing.Value+ decimal.Parse(LblTotalCost.Text)).ToString();
+        }
+
+        private void txtHealing_EditValueChanged(object sender, EventArgs e)
+        {
+            lblTTCost.Text = (txtArmorDecay.Value + txtHealing.Value + decimal.Parse(LblTotalCost.Text)).ToString();
+        }
     }
 
 }
