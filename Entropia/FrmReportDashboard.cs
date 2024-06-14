@@ -141,7 +141,7 @@ namespace Entropia
             YouReceived_List.Columns.Add("Item");
             YouReceived_List.Columns.Add("Value", Type.GetType("System.Double"));
             YouReceived_List.Columns.Add("Count", Type.GetType("System.Int32"));
-           
+            YouReceived_List.Columns.Add("Markup", Type.GetType("System.Double"));
 
             gridControl1.DataSource = YouReceived_List;
 
@@ -537,6 +537,25 @@ namespace Entropia
                     CalculateAndDisplayResults();
 
                 }
+
+                if (lblTTCost.InvokeRequired)
+                {
+                    lblTTCost.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
+                if (lblTTRC.InvokeRequired)
+                {
+                    lblTTRC.Invoke(new Action(() => CalculateAndDisplayResults()));
+                }
+                else
+                {
+                    CalculateAndDisplayResults();
+                }
+
                 await ReadFileAsync();
             }, null, debounceTime, Timeout.Infinite);
         }
@@ -1362,6 +1381,31 @@ namespace Entropia
                 LblTotalCost.Text = (PedPrimary + PedSecondary).ToString();
 
             }
+
+            if (lblTTCost.InvokeRequired)
+            {
+                lblTTCost.Invoke(new Action(() => lblTTCost.Text = (PedPrimary + PedSecondary + (double)txtArmorDecay.Value + (double)txtHealing.Value).ToString()));
+            }
+            else
+            {
+                lblTTCost.Text = (PedPrimary + PedSecondary + (double)txtArmorDecay.Value + (double)txtHealing.Value).ToString();
+            }
+            double TTReturn = sum - sumToSubtract;
+            double TTCost = PedPrimary + PedSecondary + (double)txtArmorDecay.Value + (double)txtHealing.Value;
+            double PercentageTTRP = TTReturn / TTCost * 100;
+            if (lblTTRC.InvokeRequired)
+            {
+                lblTTRC.Invoke(new Action(() => lblTTRC.Text = (Math.Round(PercentageTTRP,2)).ToString() +" %"));
+            }
+            else
+            {
+                lblTTRC.Text = (Math.Round(PercentageTTRP, 2)).ToString() + " %";
+
+            }
+
+          
+
+            
         }
 
 
@@ -1452,6 +1496,13 @@ namespace Entropia
             double TotalInflictedDamage = SimpleHitSum;
 
             lblDamagePerPecPrimary.Text = Math.Round(TotalInflictedDamage / CostPerPec, 4).ToString();
+
+            double CostPerPed = CostPerPec / 100;
+            double SecondaryCostPerPed = double.Parse(lblTotalCostPedSecondary.Text);
+            LblTotalCost.Text = (CostPerPed + SecondaryCostPerPed).ToString();
+
+            txtArmorDecay_EditValueChanged(sender, e);
+            txtHealing_EditValueChanged(sender, e);
         }
 
         #region Keylogger Logic
@@ -1526,6 +1577,13 @@ namespace Entropia
             double TotalInflictedDamage = SimpleHitSum;
 
             lblDamagePerPecSecondary.Text = Math.Round(TotalInflictedDamage / CostPerPec, 4).ToString();
+
+            double CostPerPed = CostPerPec / 100;
+            double PrimaryCostPerPed = double.Parse(lblTotalCostPedPrimary.Text);
+            LblTotalCost.Text = (CostPerPed + PrimaryCostPerPed).ToString();
+
+            txtArmorDecay_EditValueChanged(sender, e);
+            txtHealing_EditValueChanged(sender, e);
         }
 
         private void txtCostofAttacksPrimary_DoubleClick(object sender, EventArgs e)
@@ -1563,11 +1621,27 @@ namespace Entropia
         private void txtArmorDecay_EditValueChanged(object sender, EventArgs e)
         {
             lblTTCost.Text = (txtArmorDecay.Value + txtHealing.Value+ decimal.Parse(LblTotalCost.Text)).ToString();
+            double TTR = double.Parse(lblTxtTotalValue.Text);
+            double TTC = double.Parse(lblTTCost.Text);
+            lblTTRC.Text = Math.Round(TTR/TTC*100,2).ToString() + " %";
         }
 
         private void txtHealing_EditValueChanged(object sender, EventArgs e)
         {
             lblTTCost.Text = (txtArmorDecay.Value + txtHealing.Value + decimal.Parse(LblTotalCost.Text)).ToString();
+            double TTR = double.Parse(lblTxtTotalValue.Text);
+            double TTC = double.Parse(lblTTCost.Text);
+            lblTTRC.Text = Math.Round(TTR / TTC * 100, 2).ToString() + " %";
+        }
+
+        private void LblTotalCost_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblTotalCost_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

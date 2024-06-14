@@ -38,6 +38,9 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTTRC = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
             this.Lbl_Enhancer06_Value = new DevExpress.XtraEditors.LabelControl();
@@ -159,6 +162,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel20.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -315,6 +319,7 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "MARKUP";
+            this.gridColumn6.FieldName = "Markup";
             this.gridColumn6.MinWidth = 24;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
@@ -329,6 +334,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.98931F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.88243F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.13895F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel20, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel15, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
@@ -356,6 +362,53 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1052, 687);
             this.tableLayoutPanel1.TabIndex = 7;
+            // 
+            // tableLayoutPanel20
+            // 
+            this.tableLayoutPanel20.BackColor = System.Drawing.Color.DarkCyan;
+            this.tableLayoutPanel20.ColumnCount = 1;
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel20.Controls.Add(this.lblTTRC, 0, 1);
+            this.tableLayoutPanel20.Controls.Add(this.labelControl34, 0, 0);
+            this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel20.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold);
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(4, 550);
+            this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
+            this.tableLayoutPanel20.RowCount = 2;
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(254, 135);
+            this.tableLayoutPanel20.TabIndex = 17;
+            // 
+            // lblTTRC
+            // 
+            this.lblTTRC.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTTRC.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblTTRC.Appearance.Options.UseFont = true;
+            this.lblTTRC.Appearance.Options.UseForeColor = true;
+            this.lblTTRC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTTRC.Location = new System.Drawing.Point(4, 69);
+            this.lblTTRC.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.lblTTRC.Name = "lblTTRC";
+            this.lblTTRC.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
+            this.lblTTRC.Size = new System.Drawing.Size(246, 64);
+            this.lblTTRC.TabIndex = 3;
+            this.lblTTRC.Text = "0";
+            // 
+            // labelControl34
+            // 
+            this.labelControl34.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelControl34.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl34.Appearance.Options.UseFont = true;
+            this.labelControl34.Appearance.Options.UseForeColor = true;
+            this.labelControl34.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl34.Location = new System.Drawing.Point(4, 2);
+            this.labelControl34.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl34.Name = "labelControl34";
+            this.labelControl34.Size = new System.Drawing.Size(246, 63);
+            this.labelControl34.TabIndex = 2;
+            this.labelControl34.Text = "TTRP";
             // 
             // tableLayoutPanel15
             // 
@@ -1941,6 +1994,8 @@
             this.LblTotalCost.Size = new System.Drawing.Size(122, 29);
             this.LblTotalCost.TabIndex = 3;
             this.LblTotalCost.Text = "0";
+            this.LblTotalCost.TextChanged += new System.EventHandler(this.LblTotalCost_TextChanged);
+            this.LblTotalCost.Click += new System.EventHandler(this.LblTotalCost_Click);
             // 
             // labelControl42
             // 
@@ -2093,6 +2148,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel20.ResumeLayout(false);
+            this.tableLayoutPanel20.PerformLayout();
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel15.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -2273,5 +2330,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl42;
         private DevExpress.XtraEditors.CalcEdit txtArmorDecay;
         private DevExpress.XtraEditors.CalcEdit txtHealing;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
+        private DevExpress.XtraEditors.LabelControl lblTTRC;
+        private DevExpress.XtraEditors.LabelControl labelControl34;
     }
 }
